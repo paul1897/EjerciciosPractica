@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Editar Historia Clínica General</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <form method="POST" onsubmit="return validateForm()">
+        <input type="hidden" name="id" value="{{ historia[0] if historia else '' }}">
+        Médico Responsable: <input type="text" name="medico_responsable" value="{{ historia[4] if historia else '' }}" required><br><br>
+        Propietario: <input type="text" name="propietario" value="{{ historia[1] if historia else '' }}" required>
+        Fecha de Creación: <input type="date" name="fecha_creacion" value="{{ historia[5] or '' }}" required><br><br>
+        Cédula: <input type="text" name="cedula" value="{{ historia[2] if historia else '' }}" required><br><br>
+        Dirección: <input type="text" name="direccion" value="{{ historia[3] if historia else '' }}" required><br><br>
+        Telefono: <input type="text" name="telefono" value="{{ historia[6] if historia else '' }}" required><br><br>
+        Nombre del Paciente: <input type="text" name="nombre_paciente" value="{{ historia[7] if historia else '' }}" required>
+        Fecha de Nacimiento: <input type="date" name="fecha_nacimiento" value="{{ historia[8] or '' }}" required><br><br>
+        Especie:
+        <select name="especie" required>
+            <option value="Perro" {% if historia[9] == "Perro" %} selected {% endif %}>Perro</option>
+            <option value="Gato" {% if historia[9] == "Gato" %} selected {% endif %}>Gato</option>
+        </select>
+        Sexo:
+        <select name="sexo" required>
+            <option value="Macho" {% if historia[11] == "Macho" %} selected {% endif %}>Macho</option>
+            <option value="Hembra" {% if historia[11] == "Hembra" %} selected {% endif %}>Hembra</option>
+        </select>
+        <br><br>
+        Raza: <input type="text" name="raza" value="{{ historia[10] or '' }}" required>
+        Color: <input type="text" name="color" value="{{ historia[12] or '' }}" required><br><br>
+        
+        Vacuna 1: <input type="text" name="vacuna_1" value="{{ historia[13] if historia else '' }}">
+        Fecha: <input type="date" name="fecha_vacuna_1" value="{{ historia[14] or '' }}"><br><br>
+        Vacuna 2: <input type="text" name="vacuna_2" value="{{ historia[15] if historia else '' }}">
+        Fecha: <input type="date" name="fecha_vacuna_2" value="{{ historia[16] or '' }}"><br><br>
+        Vacuna 3: <input type="text" name="vacuna_3" value="{{ historia[17] if historia else '' }}">
+        Fecha: <input type="date" name="fecha_vacuna_3" value="{{ historia[18] or '' }}"><br><br>
+        Vacuna 4: <input type="text" name="vacuna_4" value="{{ historia[19] if historia else '' }}">
+        Fecha: <input type="date" name="fecha_vacuna_4" value="{{ historia[20] or '' }}"><br><br>
+        Vacuna 5: <input type="text" name="vacuna_5" value="{{ historia[21] if historia else '' }}">
+        Fecha: <input type="date" name="fecha_vacuna_5" value="{{ historia[22] or '' }}"><br><br>
+        Fecha de Última Desparasitación: <input type="date" name="fecha_ultima_desparasitacion" value="{{ historia[23] or '' }}"><br><br>
+        Motivo de Consulta:<br><textarea name="motivo_consulta" rows="5" cols="50">{{ historia[24] if historia else '' }}</textarea><br><br>
+        Sintomatología: <br><textarea name="sintomatologia" rows="5" cols="50">{{ historia[25] if historia else '' }}</textarea><br><br>
+        Tratamientos o Enfermedades: <br><textarea name="tratamiento" rows="5" cols="50">{{ historia[26] if historia else '' }}</textarea><br><br>
+        Diagnóstico Diferencial: <br><textarea name="diagnostico_diferencial" rows="5" cols="50">{{ historia[27] if historia else '' }}</textarea><br><br>
+        Exámenes Complementarios: <br><textarea name="examenes_complementarios" rows="5" cols="50">{{ historia[28] if historia else '' }}</textarea><br><br>
+        Diagnóstico Definitivo: <br><textarea name="diagnostico_definitivo" rows="5" cols="50">{{ historia[29] if historia else '' }}</textarea><br><br>
+        Tratamiento: <br><textarea name="tratamiento_final" rows="5" cols="50">{{ historia[30] if historia else '' }}</textarea><br><br>
+        Medicamento: <input type="text" name="medicamento_1" value="{{ historia[31] or '' }}">
+        Posología: <input type="text" name="posologia_1" value="{{ historia[32] or '' }}"><br><br>
+        Medicamento: <input type="text" name="medicamento_2" value="{{ historia[33] or '' }}">
+        Posología: <input type="text" name="posologia_2" value="{{ historia[34] or '' }}"><br><br>
+        Medicamento: <input type="text" name="medicamento_3" value="{{ historia[35] or '' }}">
+        Posología: <input type="text" name="posologia_3" value="{{ historia[36] or '' }}"><br><br>
+        Medicamento: <input type="text" name="medicamento_4" value="{{ historia[37] or '' }}">
+        Posología: <input type="text" name="posologia_4" value="{{ historia[38] or '' }}"><br><br>
+        Medicamento: <input type="text" name="medicamento_5" value="{{ historia[39] or '' }}">
+        Posología: <input type="text" name="posologia_5" value="{{ historia[40] or '' }}"><br><br>
+        Fecha de próxima cita: <input type="date" name="proxima_cita" value="{{ historia[41] or '' }}"><br><br>
+
+        <!-- Botones dentro de un div para alinearlos -->
+        <div class="button-container">
+            <input type="submit" value="Actualizar Historia" class="btn"> <!-- Estilo del botón primario -->
+            <a href="javascript:history.back()" class="btn secundary-btn">Volver</a> <!-- Estilo del botón secundario -->
+        </div>
+    </form>
+
+    <script>
+        function validateForm() {
+            var cedula = document.getElementsByName("cedula")[0].value;
+
+            // Preguntamos si la cedula consta de 10 digitos
+            if (cedula.length == 10) {
+// Obtenemos el digito de la region que son los dos primeros digitos
+var digito_region = cedula.substring(0, 2);
+    
+    // Pregunto si la region existe, Ecuador se divide en 24 regiones
+    if (digito_region >= 1 && digito_region <= 24) {
+        // Extraigo el ultimo digito
+        var ultimo_digito = cedula.substring(9, 10);
+
+        // Agrupo todos los pares y los sumo
+        var pares = parseInt(cedula.substring(1, 2)) + parseInt(cedula.substring(3, 4)) +
+                    parseInt(cedula.substring(5, 6)) + parseInt(cedula.substring(7, 8));
+
+        // Agrupo los impares, los multiplico por un factor de 2,
+        // si la resultante es > que 9 le restamos el 9 a la resultante
+        var impares = 0;
+        for (var i = 0; i < 9; i += 2) {
+            var numero = parseInt(cedula.substring(i, i + 1)) * 2;
+            impares += (numero > 9) ? (numero - 9) : numero;
+        }
+
+        // Suma total
+        var suma_total = pares + impares;
+
+        // Extraemos el primer digito
+        var primer_digito_suma = String(suma_total).substring(0, 1);
+
+        // Obtenemos la decena inmediata
+        var decena = (parseInt(primer_digito_suma) + 1) * 10;
+
+        // Obtenemos la resta de la decena inmediata - la suma_total
+        // Esto nos da el digito validador
+        var digito_validador = decena - suma_total;
+
+        // Si el digito validador es igual a 10, toma el valor de 0
+        if (digito_validador == 10)
+            digito_validador = 0;
+
+        // Validamos que el digito validador sea igual al de la cedula
+        if (digito_validador == ultimo_digito) {
+            alert("Cédula correcta");
+        } else {
+            alert("Cédula incorrecta");
+            return false;
+        }
+    } else {
+        alert("Cédula incorrecta");
+        return false;
+    }
+            } else {
+                alert("Esta cédula tiene menos de 10 dígitos");
+                return false;
+            }
+
+            // Validación de fecha de creación
+            var fechaCreacion = document.getElementsByName("fecha_creacion")[0].value;
+            if (new Date(fechaCreacion) > new Date() || new Date(fechaCreacion).getFullYear() < 2000) {
+                alert("La fecha de creación debe estar en el pasado y después del año 2000.");
+                return false;
+            }
+
+            // Validación de fecha de nacimiento
+            var fechaNacimiento = document.getElementsByName("fecha_nacimiento")[0].value;
+            if (new Date(fechaNacimiento) > new Date() || new Date(fechaNacimiento).getFullYear() < 2000) {
+                alert("La fecha de nacimiento debe estar en el pasado y después del año 2000.");
+                return false;
+            }
+
+            // Validación de fecha de última desparasitación
+            var fechaDesparasitacion = document.getElementsByName("fecha_ultima_desparasitacion")[0].value;
+            if (fechaDesparasitacion && (new Date(fechaDesparasitacion) > new Date() || new Date(fechaDesparasitacion).getFullYear() < 2000)) {
+                alert("La fecha de última desparasitación debe estar en el pasado y después del año 2000.");
+                return false;
+            }
+
+            // Validación de fecha de próxima cita
+            var fechaProximaCita = document.getElementsByName("proxima_cita")[0].value;
+            if (fechaProximaCita && (new Date(fechaProximaCita) < new Date() || new Date(fechaProximaCita).getFullYear() < 2000)) {
+                alert("La fecha de próxima cita debe estar en el futuro y después del año 2000.");
+                return false;
+            }
+
+            // Si todas las validaciones pasan, retornamos true
+            return true;
+        }
+    </script>
+{% endblock %}

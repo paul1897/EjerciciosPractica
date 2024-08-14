@@ -1,0 +1,209 @@
+/* Estilo para botones primarios */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #43b6c9;
+    color: #fff;
+    font-family: 'Myriad Roman', sans-serif; /* Agregar la fuente a los botones primarios */
+    font-weight: bold; /* Texto en negrita */
+    border: 1px solid #43b6c9;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0px 4px 0px #266873;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #076a7a;
+    transform: translateY(3px);
+}
+
+/* Estilo para botones secundarios (secundary-btn) */
+.secundary-btn {
+    background-color: #f9b546;
+    color: #fff; /* Cambia el color del texto a blanco */
+    font-family: 'Myriad Roman', sans-serif; /* Agregar la fuente a los botones secundarios */
+    font-weight: bold; /* Texto en negrita */
+    border: 1px solid #f9b546;
+    box-shadow: 0px 4px 0px #ab7a2b;
+}
+
+.secundary-btn:hover {
+    background-color: #ff9d00;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+    border-color: #d9534f;
+    color: #fff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Estilo para el efecto "hover" del botón "Sí" */
+.btn-danger:hover {
+    background-color: #c9302c;
+    border-color: #ac2925;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+}
+
+@media print {
+    .imprimir {
+        display: none;
+    }
+}
+
+
+.button-container a {
+    margin-right: 10px; /* Ajusta el margen derecho según tus preferencias */
+}
+
+.large-btn {
+    padding: 15px 20px;
+    font-size: 18px;
+}
+
+/* Estilo para la lista de historias */
+.history-list {
+    list-style: none;
+    padding: 0;
+}
+.columns-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    width: 48%; /* Ajusta el ancho según tus necesidades */
+    margin-bottom: 20px; /* Agrega un espacio entre las columnas */
+}
+
+.column h2 {
+    text-align: center;
+}
+
+/* Estilo para cada elemento de la lista (historia) */
+.history-item {
+    margin-bottom: 20px; /* Margen inferior para separar las historias */
+    display: flex; /* Usar Flexbox para alinear elementos horizontalmente */
+    justify-content: space-between; /* Coloca los elementos al principio y al final del contenedor */
+    align-items: center; /* Centra verticalmente los elementos en el contenedor */
+}
+
+/* Estilo para el botón "Ver Historia Completa" */
+.history-item .btn {
+    margin-left: 20px; /* Mueve el botón hacia la derecha */
+}
+
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ajusta esto según tus necesidades para centrar verticalmente */
+}
+
+@font-face {
+    font-family: 'Myriad Roman';
+    src: url('/resources/Myriad Roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Aplicar la fuente a tu elemento h1 (el título) */
+h1 {
+    font-family: 'Myriad Roman', sans-serif;
+    font-style: bold; /* Texto en cursiva */
+    color: gray; /* Cambia el color del texto */
+}
+
+/* Aplicar la fuente a tu elemento h2 */
+h2 {
+    font-family: 'Myriad Roman', sans-serif;
+    color: black; /* Cambia el color del texto */
+}
+
+.input-field {
+    border: 1px solid #ccc; /* Color de borde por defecto */
+}
+
+.input-field:empty {
+    border: 1px solid #ff0000; /* Color de borde rojo cuando está vacío */
+}
+
+/* Estilo para el logo */
+.logo {
+    width: 250px; /* Ajusta el tamaño según tus necesidades */
+}
+
+/* Agrega un estilo para resaltar los campos vacíos en rojo */
+.error-field {
+    border: 1px solid #ff0000; /* Borde rojo */
+    background-color: #ffe6e6; /* Fondo rojo claro (puedes ajustar el color según tus preferencias) */
+}
+
+/* Estilo para la línea separadora */
+hr {
+    border: 1px solid #ccc; /* Puedes ajustar el color de la línea separadora */
+    margin: 10px 0;
+}
+
+/* Estilos para la tabla */
+.info-table {
+    width: 100%; /* Ancho total de la tabla */
+    border-collapse: collapse; /* Colapsar los bordes de las celdas */
+    margin-bottom: 10px; /* Espacio entre la tabla y el botón "Ver Historia Completa" */
+}
+
+/* Estilos para las celdas de la tabla */
+.info-table tr {
+    border: 1px solid #ccc; /* Borde para cada fila */
+}
+
+.info-table td {
+    padding: 5px; /* Espacio interno en las celdas */
+    border: 1px solid #ccc; /* Borde para cada celda */
+}
+
+h1 {
+    font-family: 'Myriad Roman', sans-serif;
+    font-style: bold; /* Texto en cursiva */
+    color: black; /* Cambia el color del texto */
+}
+
+.label {
+    font-family: 'Myriad Roman', sans-serif;
+    font-style: bold;
+    color: black; /* Cambia el color del texto */
+
+}
+
+.form-container {
+    width: 80%; /* Ajusta el ancho según sea necesario */
+    margin: 0 auto; /* Esto mantendrá el contenido centrado horizontalmente */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Cambia de 'center' a 'flex-start' */
+    height: 100vh;
+    margin: 0;
+    background-image: url("../img/fondo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 1.0);
+    background-attachment: fixed;
+
+}
+
+.center-content {
+    text-align: center;
+    margin-top: 20px; /* Ajusta según sea necesario para dejar espacio en la parte superior */
+}

@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Editar Historia Clínica Dermatológica</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <form method="POST" onsubmit="return validateForm()">
+        <input type="hidden" name="id" value="{{ historia_derma[0] if historia_derma else '' }}">
+        Médico Responsable: <input type="text" name="medico_responsable_d" value="{{ historia_derma[4] if historia_derma else '' }}" required><br><br>
+        Propietario: <input type="text" name="propietario_d" value="{{ historia_derma[1] if historia_derma else '' }}" required>
+        Fecha de Creación: <input type="date" name="fecha_creacion_d" value="{{ historia_derma[5] or '' }}" required><br><br>
+        Cédula: <input type="text" name="cedula_d" value="{{ historia_derma[2] if historia_derma else '' }}" required><br><br>
+        Dirección: <input type="text" name="direccion_d" value="{{ historia_derma[3] if historia_derma else '' }}" required><br><br>
+        Telefono: <input type="text" name="telefono_d" value="{{ historia_derma[6] if historia_derma else '' }}" required><br><br>
+        Nombre del Paciente: <input type="text" name="nombre_paciente_d" value="{{ historia_derma[7] if historia_derma else '' }}" required>
+        Fecha de Nacimiento: <input type="date" name="fecha_nacimiento_d" value="{{ historia_derma[8] or '' }}" required><br><br>
+        Especie:
+        <select name="especie_d" required>
+            <option value="Perro" {% if historia_derma[9] == "Perro" %} selected {% endif %}>Perro</option>
+            <option value="Gato" {% if historia_derma[9] == "Gato" %} selected {% endif %}>Gato</option>
+        </select>
+        Sexo:
+        <select name="sexo_d" required>
+            <option value="Macho" {% if historia_derma[11] == "Macho" %} selected {% endif %}>Macho</option>
+            <option value="Hembra" {% if historia_derma[11] == "Hembra" %} selected {% endif %}>Hembra</option>
+        </select>
+        <br><br>
+        Raza: <input type="text" name="raza_d" value="{{ historia_derma[10] or '' }}" required>
+        Color: <input type="text" name="color_d" value="{{ historia_derma[12] or '' }}" required><br><br>
+        Vacuna 1: <input type="text" name="vacuna_1_d" value="{{ historia_derma[13] if historia_derma else '' }}">        
+        Fecha: <input type="date" name="fecha_vacuna_1_d" value="{{ historia_derma[14] or '' }}"><br><br>
+        Vacuna 2: <input type="text" name="vacuna_2_d" value="{{ historia_derma[15] if historia_derma else '' }}">        
+        Fecha: <input type="date" name="fecha_vacuna_2_d" value="{{ historia_derma[16] or '' }}"><br><br>
+        Vacuna 3: <input type="text" name="vacuna_3_d" value="{{ historia_derma[17] if historia_derma else '' }}">        
+        Fecha: <input type="date" name="fecha_vacuna_3_d" value="{{ historia_derma[18] or '' }}"><br><br>
+        Vacuna 4: <input type="text" name="vacuna_4_d" value="{{ historia_derma[19] if historia_derma else '' }}">        
+        Fecha: <input type="date" name="fecha_vacuna_4_d" value="{{ historia_derma[20] or '' }}"><br><br>
+        Vacuna 5: <input type="text" name="vacuna_5_d" value="{{ historia_derma[21] if historia_derma else '' }}">        
+        Fecha: <input type="date" name="fecha_vacuna_5_d" value="{{ historia_derma[22] or '' }}"><br><br>
+        Fecha de Última Desparasitación: <input type="date" name="fecha_ultima_desparasitacion_d" value="{{ historia_derma[23] or '' }}"><br><br>
+        Motivo de Consulta:<br><textarea name="motivo_consulta_d" rows="5" cols="50">{{ historia_derma[24] if historia_derma else '' }}</textarea><br><br>
+        Sintomatología: <br><textarea name="sintomatologia_d" rows="5" cols="50">{{ historia_derma[25] if historia_derma else '' }}</textarea><br><br>
+        Tratamientos o Enfermedades: <br><textarea name="tratamiento_d" rows="5" cols="50">{{ historia_derma[26] if historia_derma else '' }}</textarea><br><br>
+        Diagnóstico Diferencial: <br><textarea name="diagnostico_diferencial_d" rows="5" cols="50">{{ historia_derma[27] if historia_derma else '' }}</textarea><br><br>
+        ¿Vive con otras mascotas?: <input type="text" name="otras_mascotas_d" value="{{ historia_derma[28] if historia_derma else '' }}"><br><br>
+        ¿Vive con niños en casa: <input type="text" name="nin_casa_d" value="{{ historia_derma[29] if historia_derma else '' }}"><br><br>
+        Familia con problemas de salud: <input type="text" name="familia_problema_d" value="{{ historia_derma[30] if historia_derma else '' }}"><br><br>
+        Tipo de comida: <input type="text" name="tipo_comida_d" value="{{ historia_derma[31] if historia_derma else '' }}"><br><br>
+        Golosinas: <input type="text" name="golosinas_d" value="{{ historia_derma[32] if historia_derma else '' }}"><br><br>
+        Caida de pelo: <input type="text" name="caida_pelo_d" value="{{ historia_derma[33] if historia_derma else '' }}"><br><br>
+        Se rasca: <input type="text" name="se_rasca_d" value="{{ historia_derma[34] if historia_derma else '' }}"><br><br>
+        Ambiente: <input type="text" name="ambiente_d" value="{{ historia_derma[35] if historia_derma else '' }}"><br><br>
+        Pasa mucho tiempo al sol: <input type="text" name="pasa_sol_d" value="{{ historia_derma[36] if historia_derma else '' }}"><br><br>
+        Pasa mucho tiempo en la tierra: <input type="text" name="pasa_tierra_d" value="{{ historia_derma[37] if historia_derma else '' }}"><br><br>
+        Defecación: <input type="text" name="defecacion_d" value="{{ historia_derma[38] if historia_derma else '' }}"><br><br>
+        Parte enrojecida: <input type="text" name="parte_enrojecida_d" value="{{ historia_derma[39] if historia_derma else '' }}"><br><br>
+        ¿Control de Ectoparásitos?<br><br>
+        Fecha: <input type="date" name="fecha_ectoparasitos_d" value="{{ historia_derma[40] or '' }}"><br>
+       <!-- Descripción: <input type="text" name="descrip_ectoparasitos_d" value="{{ historia_derma[41] if historia_derma else '' }}"><br><br>
+       --> Descripción:<br><textarea name="descrip_ectoparasitos_d" rows="5" cols="50">{{ historia_derma[41] if historia_derma else '' }}</textarea><br><br>
+
+        
+        Duchas en casa: <input type="text" name="duchas_casa_d" value="{{ historia_derma[42] if historia_derma else '' }}"><br><br>
+        Alergia a comida: <input type="text" name="alergia_comida_d" value="{{ historia_derma[43] if historia_derma else '' }}"><br><br>
+        Raspado cutáneo: <input type="text" name="rasp_cutaneo_d" value="{{ historia_derma[44] if historia_derma else '' }}"><br><br>
+        Tricograma: <input type="text" name="tricograma_d" value="{{ historia_derma[45] if historia_derma else '' }}"><br><br>
+        Lámpara Wood: <input type="text" name="lampara_wood_d" value="{{ historia_derma[46] if historia_derma else '' }}"><br><br>
+        Reflejo otopodal: <input type="text" name="reflejo_otopodal_d" value="{{ historia_derma[47] if historia_derma else '' }}"><br><br>
+        Biopsia: <input type="text" name="biopsia_d" value="{{ historia_derma[48] if historia_derma else '' }}"><br><br>
+        Citología: <input type="text" name="citologia_d" value="{{ historia_derma[49] if historia_derma else '' }}"><br><br>
+        Antibiograma: <input type="text" name="antibiograma_d" value="{{ historia_derma[50] if historia_derma else '' }}"><br><br>
+        Diagnóstico definitivo: <input type="text" name="diagnostico_definitivo_d" value="{{ historia_derma[51] if historia_derma else '' }}"><br><br>
+        Tratamiento: <input type="text" name="tratamiento_final_d" value="{{ historia_derma[52] if historia_derma else '' }}"><br><br>
+        Medicamento : <input type="text" name="medicamento_1_d" value="{{ historia_derma[53] if historia_derma else '' }}">
+        Posología Medicamento : <input type="text" name="posologia_medicamento_1_d" value="{{ historia_derma[54] if historia_derma else '' }}"><br><br>
+        Medicamento : <input type="text" name="medicamento_2_d" value="{{ historia_derma[55] if historia_derma else '' }}">
+        Posología Medicamento : <input type="text" name="posologia_medicamento_2_d" value="{{ historia_derma[56] if historia_derma else '' }}"><br><br>
+        Medicamento : <input type="text" name="medicamento_3_d" value="{{ historia_derma[57] if historia_derma else '' }}">
+        Posología Medicamento : <input type="text" name="posologia_medicamento_3_d" value="{{ historia_derma[58] if historia_derma else '' }}"><br><br>
+        Medicamento : <input type="text" name="medicamento_4_d" value="{{ historia_derma[59] if historia_derma else '' }}">
+        Posología Medicamento : <input type="text" name="posologia_medicamento_4_d" value="{{ historia_derma[60] if historia_derma else '' }}"><br><br>
+        Medicamento : <input type="text" name="medicamento_5_d" value="{{ historia_derma[61] if historia_derma else '' }}">
+        Posología Medicamento : <input type="text" name="posologia_medicamento_5_d" value="{{ historia_derma[62] if historia_derma else '' }}"><br><br>
+        Próxima Cita: <input type="date" name="proxima_cita_d" value="{{ historia_derma[63] or '' }}"><br><br>
+
+        <!-- Botones dentro de un div para alinearlos -->
+        <div class="button-container">
+            <input type="submit" value="Actualizar Historia" class="btn"> <!-- Estilo del botón primario -->
+            <a href="javascript:history.back()" class="btn secundary-btn">Volver</a> <!-- Estilo del botón secundario -->
+        </div>
+    </form>
+    <script>
+        function validateForm() {
+            var cedula = document.getElementsByName("cedula_d")[0].value;
+
+            // Preguntamos si la cédula consta de 10 dígitos
+            if (cedula.length == 10) {
+                // Obtenemos el digito de la region que son los dos primeros digitos
+                var digito_region = cedula.substring(0, 2);
+    
+                // Pregunto si la region existe, Ecuador se divide en 24 regiones
+                if (digito_region >= 1 && digito_region <= 24) {
+                    // Extraigo el ultimo digito
+                    var ultimo_digito = cedula.substring(9, 10);
+    
+                    // Agrupo todos los pares y los sumo
+                    var pares = parseInt(cedula.substring(1, 2)) + parseInt(cedula.substring(3, 4)) +
+                                parseInt(cedula.substring(5, 6)) + parseInt(cedula.substring(7, 8));
+    
+                    // Agrupo los impares, los multiplico por un factor de 2,
+                    // si la resultante es > que 9 le restamos el 9 a la resultante
+                    var impares = 0;
+                    for (var i = 0; i < 9; i += 2) {
+                        var numero = parseInt(cedula.substring(i, i + 1)) * 2;
+                        impares += (numero > 9) ? (numero - 9) : numero;
+                    }
+    
+                    // Suma total
+                    var suma_total = pares + impares;
+    
+                    // Extraemos el primer digito
+                    var primer_digito_suma = String(suma_total).substring(0, 1);
+    
+                    // Obtenemos la decena inmediata
+                    var decena = (parseInt(primer_digito_suma) + 1) * 10;
+    
+                    // Obtenemos la resta de la decena inmediata - la suma_total
+                    // Esto nos da el digito validador
+                    var digito_validador = decena - suma_total;
+    
+                    // Si el digito validador es igual a 10, toma el valor de 0
+                    if (digito_validador == 10)
+                        digito_validador = 0;
+    
+                    // Validamos que el digito validador sea igual al de la cedula
+                    if (digito_validador == ultimo_digito) {
+                        alert("Cédula correcta");
+                    } else {
+                        alert("Cédula incorrecta");
+                        return false;
+                    }
+                } else {
+                    alert("Cédula incorrecta");
+                    return false;
+                }
+            } else {
+                alert("Esta cédula tiene menos de 10 dígitos");
+                return false;
+            }
+
+            // Validación de fecha de creación
+            var fechaCreacion = document.getElementsByName("fecha_creacion_d")[0].value;
+            if (new Date(fechaCreacion) > new Date() || new Date(fechaCreacion).getFullYear() < 2000) {
+                alert("La fecha de creación debe estar en el pasado y después del año 2000.");
+                return false;
+            }
+
+            // Validación de fecha de nacimiento
+            var fechaNacimiento = document.getElementsByName("fecha_nacimiento_d")[0].value;
+            if (new Date(fechaNacimiento) > new Date() || new Date(fechaNacimiento).getFullYear() < 2000) {
+                alert("La fecha de nacimiento debe estar en el pasado y después del año 2000.");
+                return false;
+            }
+
+            // Validación de fecha de última desparasitación
+            var fechaDesparasitacion = document.getElementsByName("fecha_ultima_desparasitacion_d")[0].value;
+            if (fechaDesparasitacion && (new Date(fechaDesparasitacion) > new Date() || new Date(fechaDesparasitacion).getFullYear() < 2000)) {
+                alert("La fecha de última desparasitación debe estar en el pasado y después del año 2000.");
+                return false;
+            }
+
+            // Validación de fecha de próxima cita
+            var fechaProximaCita = document.getElementsByName("proxima_cita_d")[0].value;
+            if (fechaProximaCita && (new Date(fechaProximaCita) < new Date() || new Date(fechaProximaCita).getFullYear() < 2000)) {
+                alert("La fecha de próxima cita debe estar en el futuro y después del año 2000.");
+                return false;
+            }
+
+            // Si todas las validaciones pasan, retornamos true
+            return true;
+        }
+    </script>
+
+{% endblock %}

@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    .info-table td {
+        background-color: white;
+    }
+</style>
+
+<table class="info-table" style="max-width: 80%; border-collapse: separate;">
+    <tr>
+        <td class="label"><strong>ID: C.V.A.M-</strong></td>
+        <td>{{ historia[0] }}</td>
+    </tr>
+    <tr>
+        <td class="label"><strong>Médico Responsable:</strong></td>
+        <td>{{ historia[4] }}</td>
+    </tr>
+    <tr>
+        <td class="label"><strong>Propietario:</strong></td>
+        <td>{{ historia[1] }}</td>
+        <td class="label"><strong>Fecha de Creación:</strong></td>
+        <td>{{ historia[5] }}</td>
+    </tr>
+    <tr>
+        <td class="label"><strong>Cédula:</strong></td>
+        <td>{{ historia[2] }}</td>
+    </tr>
+    <tr>
+        <td class="label"><strong>Dirección:</strong></td>
+        <td>{{ historia[3] }}</td>
+        <td class="label"><strong>Teléfono:</strong></td>
+        <td>{{ historia[6] }}</td>
+    </tr>
+    <tr>
+        <td class="label"><strong>Nombre del Paciente:</strong></td>
+        <td>{{ historia[7] }}</td>
+        <td class="label"><strong>Fecha de Nacimiento:</strong></td>
+        <td>{{ historia[8] }}</td>
+    </tr>
+    <tr>
+        <td class="label"><strong>Especie:</strong></td>
+        <td>{{ historia[9] }}</td>
+        <td class="label"><strong>Raza:</strong></td>
+        <td>{{ historia[10] }}</td>
+    </tr>
+    <tr>
+        <td class="label"><strong>Sexo:</strong></td>
+        <td>{{ historia[11] }}</td>
+        <td class="label"><strong>Color:</strong></td>
+        <td>{{ historia[12] }}</td>
+    </tr>
+</table>
+<!-- Nueva tabla de vacunas -->
+<table class="info-table" style="max-width: 80%; border-collapse: separate;">
+    <tr>
+        <th class="label">Vacuna</th>
+        <th class="label">Fecha</th>
+    </tr>
+    <tr>
+        <td>{{ historia[13] }}</td>
+        <td>{{ historia[14] if historia[14] else '' }}</td>
+    </tr>
+    <tr>
+        <td>{{ historia[15] }}</td>
+        <td>{{ historia[16] if historia[16] else '' }}</td>
+    </tr>
+    <tr>
+        <td>{{ historia[17] }}</td>
+        <td>{{ historia[18] if historia[18] else '' }}</td>
+    </tr>
+    <tr>
+        <td>{{ historia[19] }}</td>
+        <td>{{ historia[20] if historia[20] else '' }}</td>
+    </tr>
+    <tr>
+        <td>{{ historia[21] }}</td>
+        <td>{{ historia[22] if historia[22] else '' }}</td>
+    </tr>
+</table>
+
+<table class="info-table" style="max-width: 80%; border-collapse: separate;">
+    <tr>
+        <td class="label"><strong>Fecha Última Desparasitación:</strong></td>
+        <td>{{ historia[23] if historia[23] else '' }}</td>
+    </tr>
+    <tr>
+        <td class="label"><strong>Motivo de la Consulta:</strong></td>
+        <td>{{ historia[24] }}</td>
+    </tr>
+    <tr>
+        <td class="label"><strong>Sintomatología:</strong></td>
+        <td>{{ historia[25] }}</td>
+    </tr>
+    <tr>
+        <td class="label"><strong>Tratamiento o Enfermedades:</strong></td>
+        <td>{{ historia[26] }}</td>
+    </tr>
+    <tr>
+        <td class="label"><strong>Diagnóstico Diferencial:</strong></td>
+        <td>{{ historia[27] }}</td>
+    </tr>
+    <tr>
+        <td class="label"><strong>Exámenes Complementarios:</strong></td>
+        <td>{{ historia[28] }}</td>
+    </tr>
+    <tr>
+        <td class="label"><strong>Diagnóstico Definitivo:</strong></td>
+        <td>{{ historia[29] }}</td>
+    </tr>
+    <tr>
+        <td class="label"><strong>Tratamiento:</strong></td>
+        <td>{{ historia[30] }}</td>
+    </tr>
+
+</table>
+<table class="info-table" style="max-width: 80%; border-collapse: separate;">
+    <tr>
+        <th class="label">Medicamento</th>
+        <th class="label">Posología</th>
+    </tr>
+    <tr>
+        <td>{{ historia[31] }}</td>
+        <td>{{ historia[32] }}</td>
+    </tr>
+    <tr>
+        <td>{{ historia[33] }}</td>
+        <td>{{ historia[34] }}</td>
+    </tr>
+    <tr>
+        <td>{{ historia[35] }}</td>
+        <td>{{ historia[36] }}</td>
+    </tr>
+    <tr>
+        <td>{{ historia[37] }}</td>
+        <td>{{ historia[38] }}</td>
+    </tr>
+    <tr>
+        <td>{{ historia[39] }}</td>
+        <td>{{ historia[40] }}</td>
+    </tr>
+</table>
+<table class="info-table" style="max-width: 80%; border-collapse: separate;">
+    <tr>
+        <td class="label"><strong>Fecha de próxima cita:</strong></td>
+        <td>{{ historia[41] if historia[41] else '' }}</td><br>
+    </tr>
+
+</table>
+<br><br><br><br><div style="display: flex; justify-content: center; margin-top: 35px;">
+    <div style="text-align: center; width: 35%; margin-right: 80px;"><strong>M.V.Z Responsable</strong></div>
+    <div style="text-align: center; width: 35%; margin-left: 80px;"><strong>Propietario</strong></div>
+</div>
+
+    <div class="button-container imprimir">
+        <br><br><a href="{{ url_for('editar_historia', id=historia[0]) }}" class="btn btn-primary">Editar</a>
+        <a href="{{ url_for('confirmar_borrar_historia', id=historia[0]) }}" class="btn btn-danger">Borrar</a>
+    </div>
+
+    <br>
+
+    <a href="javascript:history.back()" class="btn secundary-btn imprimir">Volver</a>
+{% endblock %}

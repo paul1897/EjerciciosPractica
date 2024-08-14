@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Error en la Búsqueda</h1>
+    <p>No se ha encontrado una historia clínica.</p>
+    
+    {% if crear_nueva %}
+        <p>¿Deseas crear una nueva historia clínica?</p>
+        <div class="button-container">
+            <a href="{{ url_for('tipo_historia') }}" class="btn">Sí</a>
+            <a href="javascript:history.back()" class="btn secundary-btn">No</a>
+        </div>
+    {% else %}
+        <div class="button-container">
+            <a href="javascript:history.back()" class="btn secundary-btn">Volver</a>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Crear Historia Clínica General</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <form method="POST" action="{{ url_for('nueva_historia') }}" onsubmit="return validateForm()">
+        Médico Responsable: <input type="text" name="medico_responsable" value="{{ request.form.medico_responsable or '' }}" required><br><br>
+        Propietario: <input type="text" name="propietario" value="{{ request.form.propietario or '' }}" required>
+        Fecha de Creación: <input type="date" name="fecha_creacion" value="{{ request.form.fecha_creacion or '' }}" required><br><br>
+        Cédula: <input type="text" name="cedula" id="cedula" value="{{ request.form.cedula_d or '' }}" required>
+        <span id="cedulaError" style="color: red;"></span><br><br>Dirección: <input type="text" name="direccion_d" value="{{ request.form.direccion_d or '' }}" required><br><br>
+        Dirección: <input type="text" name="direccion" value="{{ request.form.direccion or '' }}" required><br><br>
+        Teléfono: <input type="text" name="telefono" value="{{ request.form.telefono or '' }}"  required><br><br>
+        Nombre del Paciente: <input type="text" name="nombre_paciente" value="{{ request.form.nombre_paciente or '' }}" required>
+        Fecha de Nacimiento: <input type="date" name="fecha_nacimiento" value="{{ request.form.fecha_nacimiento or '' }}" required><br><br>
+        Especie: 
+        <select name="especie" required>
+            <option value="Perro">Perro</option>
+            <option value="Gato">Gato</option>
+        </select>
+        Sexo: 
+        <select name="sexo" required>
+            <option value="Macho">Macho</option>
+            <option value="Hembra">Hembra</option>
+        </select><br><br>
+        Raza: <input type="text" name="raza" value="{{ request.form.raza or '' }}" required>
+        Color: <input type="text" name="color" value="{{ request.form.color or '' }}" required><br><br>
+    
+        Vacuna 1: <input type="text" name="vacuna_1" value="{{ request.form.vacuna_1 or '' }}"> Fecha: <input type="date" name="fecha_vacuna_1" value="{{ request.form.fecha_vacuna_1 or '' }}"><br><br>
+        Vacuna 2: <input type="text" name="vacuna_2" value="{{ request.form.vacuna_2 or '' }}"> Fecha: <input type="date" name="fecha_vacuna_2" value="{{ request.form.fecha_vacuna_2 or '' }}"><br><br>
+        Vacuna 3: <input type="text" name="vacuna_3" value="{{ request.form.vacuna_3 or '' }}"> Fecha: <input type="date" name="fecha_vacuna_3" value="{{ request.form.fecha_vacuna_3 or '' }}"><br><br>
+        Vacuna 4: <input type="text" name="vacuna_4" value="{{ request.form.vacuna_4 or '' }}"> Fecha: <input type="date" name="fecha_vacuna_4" value="{{ request.form.fecha_vacuna_4 or '' }}"><br><br>
+        Vacuna 5: <input type="text" name="vacuna_5" value="{{ request.form.vacuna_5 or '' }}"> Fecha: <input type="date" name="fecha_vacuna_5" value="{{ request.form.fecha_vacuna_5 or '' }}"><br><br>
+      
+        Fecha de Última Desparasitación: <input type="date" name="fecha_ultima_desparasitacion" value="{{ request.form.fecha_ultima_desparasitacion or '' }}"><br><br>
+        Motivo de Consulta: <br><textarea name="motivo_consulta" rows="4" cols="50">{{ request.form.motivo_consulta or '' }}</textarea><br><br>
+        Sintomatología: <br><textarea name="sintomatologia" rows="4" cols="50">{{ request.form.sintomatologia or '' }}</textarea><br><br>
+        Tratamiento o Enfermedades: <br><textarea name="tratamiento" rows="4" cols="50">{{ request.form.tratamiento or '' }}</textarea><br><br>
+        Diagnóstico Diferencial: <br><textarea name="diagnostico_diferencial" rows="4" cols="50">{{ request.form.diagnostico_diferencial or '' }}</textarea><br><br>
+        Exámenes Complementarios: <br><textarea name="examenes_complementarios" rows="4" cols="50">{{ request.form.examenes_complementarios or '' }}</textarea><br><br>
+        Diagnóstico Definitivo: <br><textarea name="diagnostico_definitivo" rows="4" cols="50">{{ request.form.diagnostico_definitivo or '' }}</textarea><br><br>
+        Tratamiento: <br><textarea name="tratamiento_final" rows="4" cols="50">{{ request.form.tratamiento_final or '' }}</textarea><br><br>
+       
+        Medicamento: <input type="text" name="medicamento_1" value="{{ request.form.medicamento_1 or '' }}">
+        Posología: <input type="text" name="posologia_1" value="{{ request.form.posologia_1 or '' }}"><br><br>
+        Medicamento: <input type="text" name="medicamento_2" value="{{ request.form.medicamento_2 or '' }}">
+        Posología: <input type="text" name="posologia_2" value="{{ request.form.posologia_2 or '' }}"><br><br>
+        Medicamento: <input type="text" name="medicamento_3" value="{{ request.form.medicamento_3 or '' }}">
+        Posología: <input type="text" name="posologia_3" value="{{ request.form.posologia_3 or '' }}"><br><br>
+        Medicamento: <input type="text" name="medicamento_4" value="{{ request.form.medicamento_4 or '' }}">
+        Posología: <input type="text" name="posologia_4" value="{{ request.form.posologia_4 or '' }}"><br><br>
+        Medicamento: <input type="text" name="medicamento_5" value="{{ request.form.medicamento_5 or '' }}">
+        Posología: <input type="text" name="posologia_5" value="{{ request.form.posologia_5 or '' }}"><br><br>
+        Fecha de Próxima Cita: <input type="date" name="proxima_cita" value="{{ request.form.proxima_cita or '' }}"><br><br>
+
+        
+        <div class="button-container">
+            <input type="submit" value="Guardar Historia" class="btn btn-save">
+            <a href="{{ url_for('tipo_historia') }}" class="btn secundary-btn">Volver</a>
+        </div>
+
+        {% if error_message %}
+            <div class="alert alert-danger">{{ error_message }}</div>
+        {% endif %}
+    </form>
+    <script>
+        function validateForm() {
+            var cedula = document.getElementById("cedula").value;
+    
+            // Preguntamos si la cedula consta de 10 digitos
+            if (cedula.length == 10) {
+                // Obtenemos el digito de la region que son los dos primeros digitos
+                var digito_region = cedula.substring(0, 2);
+    
+                // Pregunto si la region existe, Ecuador se divide en 24 regiones
+                if (digito_region >= 1 && digito_region <= 24) {
+                    // Extraigo el ultimo digito
+                    var ultimo_digito = cedula.substring(9, 10);
+    
+                    // Agrupo todos los pares y los sumo
+                    var pares = parseInt(cedula.substring(1, 2)) + parseInt(cedula.substring(3, 4)) +
+                                parseInt(cedula.substring(5, 6)) + parseInt(cedula.substring(7, 8));
+    
+                    // Agrupo los impares, los multiplico por un factor de 2,
+                    // si la resultante es > que 9 le restamos el 9 a la resultante
+                    var impares = 0;
+                    for (var i = 0; i < 9; i += 2) {
+                        var numero = parseInt(cedula.substring(i, i + 1)) * 2;
+                        impares += (numero > 9) ? (numero - 9) : numero;
+                    }
+    
+                    // Suma total
+                    var suma_total = pares + impares;
+    
+                    // Extraemos el primer digito
+                    var primer_digito_suma = String(suma_total).substring(0, 1);
+    
+                    // Obtenemos la decena inmediata
+                    var decena = (parseInt(primer_digito_suma) + 1) * 10;
+    
+                    // Obtenemos la resta de la decena inmediata - la suma_total
+                    // Esto nos da el digito validador
+                    var digito_validador = decena - suma_total;
+    
+                    // Si el digito validador es igual a 10, toma el valor de 0
+                    if (digito_validador == 10)
+                        digito_validador = 0;
+    
+                    // Validamos que el digito validador sea igual al de la cedula
+                    if (digito_validador == ultimo_digito) {
+                        alert("Cédula correcta");
+                    } else {
+                        alert("Cédula incorrecta");
+                        return false;
+                    }
+                } else {
+                    alert("Cédula incorrecta");
+                    return false;
+                }
+            } else {
+                alert("Esta cedula tiene menos de 10 dígitos");
+                return false;
+            }
+    
+            // Validación de fecha de creación
+            var fechaCreacion = document.getElementsByName("fecha_creacion")[0].value;
+            if (new Date(fechaCreacion) > new Date() || new Date(fechaCreacion) < new Date('2000-01-01') || new Date(fechaCreacion) > new Date('2024-02-22')) {
+                alert("La fecha de creación debe estar en el pasado, después del año 2000 y antes del 22-02-2024.");
+                return false;
+            }
+    
+            // Validación de fecha de nacimiento
+            var fechaNacimiento = document.getElementsByName("fecha_nacimiento")[0].value;
+            if (new Date(fechaNacimiento) > new Date() || new Date(fechaNacimiento) < new Date('2000-01-01') || new Date(fechaNacimiento) > new Date('2024-02-22')) {
+                alert("La fecha de nacimiento debe estar en el pasado, después del año 2000 y antes del 22-02-2024.");
+                return false;
+            }
+    
+            // Validación de fecha de última desparasitación
+            var fechaDesparasitacion = document.getElementsByName("fecha_ultima_desparasitacion")[0].value;
+            if (fechaDesparasitacion && (new Date(fechaDesparasitacion) > new Date() || new Date(fechaDesparasitacion) < new Date('2000-01-01') || new Date(fechaDesparasitacion) > new Date('2024-02-22'))) {
+                alert("La fecha de última desparasitación debe estar en el pasado, después del año 2000 y antes del 22-02-2024.");
+                return false;
+            }
+    
+            // Validación de fecha de próxima cita
+            var fechaProximaCita = document.getElementsByName("proxima_cita")[0].value;
+            if (fechaProximaCita && (new Date(fechaProximaCita) < new Date() || new Date(fechaProximaCita) < new Date('2000-01-01') || new Date(fechaProximaCita) > new Date('2024-02-22'))) {
+                alert("La fecha de próxima cita debe estar en el futuro, después del año 2000 y antes del 22-02-2024.");
+                return false;
+            }
+    
+            // Si todas las validaciones pasan, retornamos true
+            return true;
+        }
+    </script>
+    
+{% endblock %}

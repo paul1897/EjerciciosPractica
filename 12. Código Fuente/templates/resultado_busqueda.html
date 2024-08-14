@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .info-table td {
+        background-color: white;
+    }
+</style>
+    <h1>Resultados de la Búsqueda de Historias Clínicas</h1>
+    <ul class="history-list">
+        {% for historia in historias %}
+            <li class="history-item">
+                <table class="info-table">
+                    <tr>
+                        <td><strong>ID: C.V.A.M- </strong></td>
+                        <td>{{ historia[0] }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Propietario:</strong></td>
+                        <td>{{ historia[1] }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cédula:</strong></td>
+                        <td>{{ historia[2] }}</td>
+                    </tr>
+
+
+                </table>
+                <a href="{{ url_for('reporte_historia', id=historia[0]) }}" class="btn secondary-btn">Ver Historia Completa</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}" class="btn secondary-btn">Regresar</a>
+{% endblock %}
