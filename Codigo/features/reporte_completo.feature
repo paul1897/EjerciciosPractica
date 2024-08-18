@@ -1,4 +1,4 @@
-Feature: Visualización de reportes completos de historias clínicas
+Feature: Visualización de reportes completos de todas las historias clínicas
 
   Scenario: Visualizar reportes completos de historias clínicas generales y dermatológicas
     Given estoy en la página principal
