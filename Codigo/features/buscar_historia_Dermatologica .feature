@@ -2,7 +2,7 @@ Feature: Buscar Historia Clínica Dermatológica
 
   Scenario: Buscar historia clínica dermatológica por cédula válida
     Given estoy en la página de búsqueda de historias clínicas
-    When ingreso la cédula "1722808969"
+    When ingreso la cédula "1750800151"
     And hago clic en el botón de búsqueda
     Then debo ser redirigido a la página de la historia clínica
 
