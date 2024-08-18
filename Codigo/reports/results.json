@@ -1,3 +1,61 @@
 [
-{"keyword": "Feature", "name": "Visualizaci\u00f3n de reportes completos de historias cl\u00ednicas", "tags": [], "location": "features/reporte_completo.feature:1", "status": "passed", "elements": [{"type": "scenario", "keyword": "Scenario", "name": "Visualizar reportes completos de historias cl\u00ednicas generales y dermatol\u00f3gicas", "tags": [], "location": "features/reporte_completo.feature:3", "steps": [{"keyword": "Given", "step_type": "given", "name": "estoy en la p\u00e1gina principal", "location": "features/reporte_completo.feature:4", "match": {"location": "features/steps/reporte_completo.py:7", "arguments": []}, "result": {"status": "passed", "duration": 1.5281856060028076}}, {"keyword": "When", "step_type": "when", "name": "hago clic en el bot\u00f3n \"Mostrar Todas las Historias Disponibles\"", "location": "features/reporte_completo.feature:5", "match": {"location": "features/steps/reporte_completo.py:12", "arguments": []}, "result": {"status": "passed", "duration": 4.285845756530762}}, {"keyword": "Then", "step_type": "then", "name": "deber\u00eda ser redirigido a la p\u00e1gina de \"Reporte Completo de Historias Cl\u00ednicas\"", "location": "features/reporte_completo.feature:6", "match": {"location": "features/steps/reporte_completo.py:20", "arguments": []}, "result": {"status": "passed", "duration": 0.009996175765991211}}], "status": "passed"}]}
-]
+    {
+      "uri": "reporte_completo.feature",
+      "id": "visualizar-reportes-completos",
+      "keyword": "Feature",
+      "name": "Visualización de reportes completos de historias clínicas",
+      "description": "",
+      "line": 1,
+      "elements": [
+        {
+          "id": "visualizar-reportes-completos",
+          "keyword": "Scenario",
+          "name": "Visualizar reportes completos de historias clínicas generales y dermatológicas",
+          "description": "",
+          "line": 3,
+          "type": "scenario",
+          "steps": [
+            {
+              "keyword": "Given ",
+              "name": "estoy en la página principal",
+              "line": 4,
+              "match": {
+                "location": "features/steps/reporte_completo.py:7"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 12881581783294678
+              }
+            },
+            {
+              "keyword": "When ",
+              "name": "hago clic en el botón \"Mostrar Todas las Historias Disponibles\"",
+              "line": 5,
+              "match": {
+                "location": "features/steps/reporte_completo.py:12"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 2154820442199707
+              }
+            },
+            {
+              "keyword": "Then ",
+              "name": "debería ser redirigido a la página de \"Reporte Completo de Historias Clínicas\"",
+              "line": 6,
+              "match": {
+                "location": "features/steps/reporte_completo.py:20"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 9010791778564453
+              }
+            }
+          ],
+          "tags": []
+        }
+      ],
+      "tags": []
+    }
+  ]
+  
