@@ -2,7 +2,7 @@ Feature: Buscar Historia Clínica
 
 Scenario: Buscar historia clínica por cédula válida
   Given I am on the clinical records search page
-  When I enter the ID "1722808969"
+  When I enter the ID "1750800151"
   And I click the search button
   Then I should be redirected to the clinical record page
 
