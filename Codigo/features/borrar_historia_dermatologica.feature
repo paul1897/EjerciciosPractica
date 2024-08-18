@@ -1,4 +1,4 @@
-Feature: Borrar Historia Clínica Dermatoscópica
+Feature: Borrar Historia Clínica Dermatologica
 
   Scenario: Borrar una historia clínica
     Given I am on the report page of a specific dermatoscopic history

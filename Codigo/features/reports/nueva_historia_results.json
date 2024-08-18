@@ -3,7 +3,7 @@
       "uri": "../nueva_historia.feature",
       "id": "cargar-la-pagina-principal-y-verificar-el-boton-nueva-historia-clinica",
       "keyword": "Feature",
-      "name": "Página Principal",
+      "name": "Nueva historia clinica",
       "description": "",
       "line": 3,
       "elements": [

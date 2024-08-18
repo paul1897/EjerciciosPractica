@@ -1,5 +1,6 @@
 # features/pagina_principal.feature
-Feature: Página Principal de Ani-Medical
+Feature: Nueva historia general
+
 
   Scenario: Cargar la página principal y verificar el botón "Nueva Historia Clínica"
     Given I am on the home page

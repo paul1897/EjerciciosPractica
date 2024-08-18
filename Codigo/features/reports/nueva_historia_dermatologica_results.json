@@ -3,7 +3,7 @@
       "uri": "../tipo_de_historia_dermatologica.feature",
       "id": "cargar-la-pagina-principal-y-verificar-el-boton-nueva-historia-clinica",
       "keyword": "Feature",
-      "name": "Página Principal de Ani-Medical",
+      "name": "Nueva historia dermatologica",
       "description": "",
       "line": 2,
       "elements": [
