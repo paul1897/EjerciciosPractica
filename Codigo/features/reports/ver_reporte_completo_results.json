@@ -1,0 +1,61 @@
+[
+    {
+      "uri": "reporte_completo.feature",
+      "id": "visualizar-reportes-completos-de-historias-clinicas-generales-y-dermatologicas",
+      "keyword": "Feature",
+      "name": "Visualización de reportes completos de todas las historias clínicas",
+      "description": "",
+      "line": 1,
+      "elements": [
+        {
+          "id": "visualizar-reportes-completos-de-historias-clinicas-generales-y-dermatologicas",
+          "keyword": "Scenario",
+          "name": "Visualizar reportes completos de historias clínicas generales y dermatológicas",
+          "description": "",
+          "line": 3,
+          "type": "scenario",
+          "steps": [
+            {
+              "keyword": "Given",
+              "name": "estoy en la página principal",
+              "line": 4,
+              "match": {
+                "location": "steps/reporte_completo.py:7"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 144374418258667
+              }
+            },
+            {
+              "keyword": "When",
+              "name": "hago clic en el botón \"Mostrar Todas las Historias Disponibles\"",
+              "line": 5,
+              "match": {
+                "location": "steps/reporte_completo.py:12"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 21887497901916504
+              }
+            },
+            {
+              "keyword": "Then",
+              "name": "debería ser redirigido a la página de \"Reporte Completo de Historias Clínicas\"",
+              "line": 6,
+              "match": {
+                "location": "steps/reporte_completo.py:20"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 6000280382490234
+              }
+            }
+          ],
+          "tags": []
+        }
+      ],
+      "tags": []
+    }
+  ]
+  
