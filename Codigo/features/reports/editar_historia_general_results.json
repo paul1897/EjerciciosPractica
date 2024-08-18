@@ -3,7 +3,7 @@
       "uri": "../editar_historia_general.feature",
       "id": "editar-campo-en-la-pagina-de-edicion-y-actualizar-la-historia",
       "keyword": "Feature",
-      "name": "Editar historia clínica",
+      "name": "Editar historia clínica general",
       "description": "",
       "line": 1,
       "elements": [

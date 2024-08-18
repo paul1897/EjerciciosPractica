@@ -1,4 +1,4 @@
-Feature: Editar Historia Dermatoscópica
+Feature: Editar Historia Dermatologica
 
   Scenario: Actualizar el campo "medico_responsable_d" y guardar la historia
     Given I am on the edit dermatoscopic history page for a specific history
