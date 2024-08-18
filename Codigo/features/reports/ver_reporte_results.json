@@ -1,0 +1,97 @@
+[
+    {
+      "uri": "../verHistoria_generalreport.feature",
+      "id": "cargar-dos-historias-clinicas-y-redirigir-a-la-historia-completa",
+      "keyword": "Feature",
+      "name": "Ver reporte completo de historias clínicas",
+      "description": "",
+      "line": 1,
+      "elements": [
+        {
+          "id": "cargar-dos-historias-clinicas-y-redirigir-a-la-historia-completa",
+          "keyword": "Scenario",
+          "name": "Cargar dos historias clínicas y redirigir a la historia completa",
+          "description": "",
+          "line": 3,
+          "type": "scenario",
+          "steps": [
+            {
+              "keyword": "Given ",
+              "name": "I am on the complete report page",
+              "line": 4,
+              "match": {
+                "location": "verHistoria_generalreport.py:10"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 5906027793
+              }
+            },
+            {
+              "keyword": "When ",
+              "name": "I click on the first \"Ver Historia Completa\" button",
+              "line": 5,
+              "match": {
+                "location": "verHistoria_generalreport.py:17"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 4149426699
+              }
+            },
+            {
+              "keyword": "Then ",
+              "name": "I should be redirected to the complete history page for the first item",
+              "line": 6,
+              "match": {
+                "location": "verHistoria_generalreport.py:28"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 178537368
+              }
+            },
+            {
+              "keyword": "When ",
+              "name": "I go back to the complete report page",
+              "line": 7,
+              "match": {
+                "location": "verHistoria_generalreport.py:34"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 4088837862
+              }
+            },
+            {
+              "keyword": "And ",
+              "name": "I click on the second \"Ver Historia Completa\" button",
+              "line": 8,
+              "match": {
+                "location": "verHistoria_generalreport.py:39"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 4100120068
+              }
+            },
+            {
+              "keyword": "Then ",
+              "name": "I should be redirected to the complete history page for the second item",
+              "line": 9,
+              "match": {
+                "location": "verHistoria_generalreport.py:50"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 2125141859
+              }
+            }
+          ],
+          "tags": []
+        }
+      ],
+      "tags": []
+    }
+  ]
+  

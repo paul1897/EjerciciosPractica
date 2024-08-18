@@ -1,0 +1,245 @@
+[
+    {
+      "uri": "../editar_historia_general.feature",
+      "id": "editar-campo-en-la-pagina-de-edicion-y-actualizar-la-historia",
+      "keyword": "Feature",
+      "name": "Editar historia clínica",
+      "description": "",
+      "line": 1,
+      "elements": [
+        {
+          "id": "editar-campo-en-la-pagina-de-edicion-y-actualizar-la-historia",
+          "keyword": "Scenario",
+          "name": "Editar campo en la página de edición y actualizar la historia",
+          "description": "",
+          "line": 3,
+          "type": "scenario",
+          "steps": [
+            {
+              "keyword": "Given ",
+              "name": "I am on the edit history page for a specific history",
+              "line": 4,
+              "match": {
+                "location": "editar_historia_general.py:10"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 5933365106
+              }
+            },
+            {
+              "keyword": "When ",
+              "name": "I update the \"medico_responsable\" field with a new value",
+              "line": 5,
+              "match": {
+                "location": "editar_historia_general.py:17"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 2071150064
+              }
+            },
+            {
+              "keyword": "And ",
+              "name": "I click the \"Actualizar Historia\" button",
+              "line": 6,
+              "match": {
+                "location": "editar_historia_general.py:29"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 4048731327
+              }
+            },
+            {
+              "keyword": "Then ",
+              "name": "the changes should be saved and the page should reflect the updated data",
+              "line": 7,
+              "match": {
+                "location": "editar_historia_general.py:45"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 10220217466,
+                "error_message": [
+                  "Assertion Failed: Error al verificar que los cambios se han guardado: Message: ",
+                  "Stacktrace:",
+                  "\tGetHandleVerifier [0x00A68923+23283]",
+                  "\t(No symbol) [0x00A2E934]",
+                  "\t(No symbol) [0x00960733]",
+                  "\t(No symbol) [0x009A326F]",
+                  "\t(No symbol) [0x009A34AB]",
+                  "\t(No symbol) [0x009DEE42]",
+                  "\t(No symbol) [0x009C4464]",
+                  "\t(No symbol) [0x009DCB8D]",
+                  "\t(No symbol) [0x009C41B6]",
+                  "\t(No symbol) [0x00998017]",
+                  "\t(No symbol) [0x0099890D]",
+                  "\tGetHandleVerifier [0x00B5A5F3+1013699]",
+                  "\tGetHandleVerifier [0x00B63E4C+1052700]",
+                  "\tGetHandleVerifier [0x00B5D4B4+1025668]",
+                  "\tGetHandleVerifier [0x00A8EA2B+179195]",
+                  "\t(No symbol) [0x00A36833]",
+                  "\t(No symbol) [0x00A33198]",
+                  "\t(No symbol) [0x00A33337]",
+                  "\t(No symbol) [0x00A2B4BE]",
+                  "\tBaseThreadInitThunk [0x76BB6839+25]",
+                  "\tRtlGetFullPathName_UEx [0x7770906F+1215]",
+                  "\tRtlGetFullPathName_UEx [0x7770903D+1165]",
+                  "",
+                  "Captured logging:",
+                  "INFO:WDM:====== WebDriver manager ======",
+                  "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+                  "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+                  "INFO:WDM:Driver [C:\\Users\\User\\.wdm\\drivers\\chromedriver\\win64\\127.0.6533.119\\chromedriver-win32/chromedriver.exe] found in cache"
+                ]
+              }
+            }
+          ],
+          "tags": []
+        }
+      ],
+      "tags": []
+    },
+    {
+      "uri": "../tipo_de_historia_dermatologica.feature",
+      "id": "cargar-la-pagina-principal-y-verificar-el-boton-nueva-historia-clinica",
+      "keyword": "Feature",
+      "name": "Página Principal de Ani-Medical",
+      "description": "",
+      "line": 2,
+      "elements": [
+        {
+          "id": "cargar-la-pagina-principal-y-verificar-el-boton-nueva-historia-clinica",
+          "keyword": "Scenario",
+          "name": "Cargar la página principal y verificar el botón \"Nueva Historia Clínica\"",
+          "description": "",
+          "line": 4,
+          "type": "scenario",
+          "steps": [
+            {
+              "keyword": "Given ",
+              "name": "I am on the home page",
+              "line": 5,
+              "match": {
+                "location": "tipo_de_historia_dermatologica.py:9"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 3827771902
+              }
+            },
+            {
+              "keyword": "Then ",
+              "name": "the page should load successfully and the \"Nueva Historia Clínica\" button should be present",
+              "line": 6,
+              "match": {
+                "location": "tipo_de_historia_dermatologica.py:16"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 4167970896
+              }
+            }
+          ],
+          "tags": []
+        },
+        {
+          "id": "hacer-clic-en-el-boton-nueva-historia-clinica-y-verificar-redireccion",
+          "keyword": "Scenario",
+          "name": "Hacer clic en el botón \"Nueva Historia Clínica\" y verificar redirección",
+          "description": "",
+          "line": 8,
+          "type": "scenario",
+          "steps": [
+            {
+              "keyword": "Given ",
+              "name": "I am on the home page",
+              "line": 9,
+              "match": {
+                "location": "tipo_de_historia_dermatologica.py:9"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 4406801700
+              }
+            },
+            {
+              "keyword": "When ",
+              "name": "I click the \"Nueva Historia Clínica\" button",
+              "line": 10,
+              "match": {
+                "location": "tipo_de_historia_dermatologica.py:43"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 2078150987
+              }
+            },
+            {
+              "keyword": "Then ",
+              "name": "I should be redirected to the type of clinical history page",
+              "line": 11,
+              "match": {
+                "location": "tipo_de_historia_dermatologica.py:53"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 485467910
+              }
+            }
+          ],
+          "tags": []
+        },
+        {
+          "id": "hacer-clic-en-el-boton-historia-clinica-dermatologica-y-verificar-redireccion",
+          "keyword": "Scenario",
+          "name": "Hacer clic en el botón \"Historia Clínica Dermatológica\" y verificar redirección",
+          "description": "",
+          "line": 13,
+          "type": "scenario",
+          "steps": [
+            {
+              "keyword": "Given ",
+              "name": "I am on the type of clinical history page",
+              "line": 14,
+              "match": {
+                "location": "tipo_de_historia_dermatologica.py:36"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 3817406177
+              }
+            },
+            {
+              "keyword": "When ",
+              "name": "I click the \"Historia Clínica Dermatológica\" button",
+              "line": 15,
+              "match": {
+                "location": "tipo_de_historia_dermatologica.py:58"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 2092666864
+              }
+            },
+            {
+              "keyword": "Then ",
+              "name": "I should be redirected to the dermatologica clinical history page",
+              "line": 16,
+              "match": {
+                "location": "tipo_de_historia_dermatologica.py:68"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 2103584051
+              }
+            }
+          ],
+          "tags": []
+        }
+      ],
+      "tags": []
+    }
+  ]
+  

@@ -1,0 +1,72 @@
+[
+    {
+      "uri": "../borrar_historia_dermatologica.feature",
+      "id": "borrar-historia-clinica",
+      "keyword": "Feature",
+      "name": "Borrar Historia Clínica Dermatoscópica",
+      "description": "",
+      "line": 1,
+      "elements": [
+        {
+          "id": "borrar-historia-clinica",
+          "keyword": "Scenario",
+          "name": "Borrar una historia clínica",
+          "description": "",
+          "line": 3,
+          "type": "scenario",
+          "steps": [
+            {
+              "keyword": "Given ",
+              "name": "I am on the report page of a specific dermatoscopic history",
+              "line": 4,
+              "match": {
+                "location": "borrar_historia_dermatologica.py:9"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 3931143522
+              }
+            },
+            {
+              "keyword": "When ",
+              "name": "I click the \"Borrar\" button",
+              "line": 5,
+              "match": {
+                "location": "borrar_historia_dermatologica.py:15"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 10147155762
+              }
+            },
+            {
+              "keyword": "And ",
+              "name": "I confirm the deletion",
+              "line": 6,
+              "match": {
+                "location": "borrar_historia_dermatologica.py:21"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 1234567890
+              }
+            },
+            {
+              "keyword": "Then ",
+              "name": "the history should be deleted and the page should reflect the deletion",
+              "line": 7,
+              "match": {
+                "location": "borrar_historia_dermatologica.py:25"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 2345678901
+              }
+            }
+          ],
+          "status": "passed"
+        }
+      ]
+    }
+  ]
+  

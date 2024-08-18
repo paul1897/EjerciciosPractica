@@ -1,0 +1,48 @@
+[
+  {
+    "uri": "../pagina_principal.feature",
+    "id": "cargar-la-pagina-de-inicio-correctamente",
+    "keyword": "Feature",
+    "name": "Cargar la página principal",
+    "description": "",
+    "line": 2,
+    "elements": [
+      {
+        "id": "cargar-la-pagina-de-inicio-correctamente",
+        "keyword": "Scenario",
+        "name": "Cargar la página de inicio correctamente",
+        "description": "",
+        "line": 4,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the home page",
+            "line": 5,
+            "match": {
+              "location": "pagina_principal.py:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3769161463
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "the page should load successfully",
+            "line": 6,
+            "match": {
+              "location": "pagina_principal.py:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2107580185
+            }
+          }
+        ],
+        "tags": []
+      }
+    ],
+    "tags": []
+  }
+]

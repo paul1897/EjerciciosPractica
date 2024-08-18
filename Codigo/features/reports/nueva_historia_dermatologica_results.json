@@ -1,0 +1,143 @@
+[
+    {
+      "uri": "../tipo_de_historia_dermatologica.feature",
+      "id": "cargar-la-pagina-principal-y-verificar-el-boton-nueva-historia-clinica",
+      "keyword": "Feature",
+      "name": "Página Principal de Ani-Medical",
+      "description": "",
+      "line": 2,
+      "elements": [
+        {
+          "id": "cargar-la-pagina-principal-y-verificar-el-boton-nueva-historia-clinica",
+          "keyword": "Scenario",
+          "name": "Cargar la página principal y verificar el botón \"Nueva Historia Clínica\"",
+          "description": "",
+          "line": 4,
+          "type": "scenario",
+          "steps": [
+            {
+              "keyword": "Given ",
+              "name": "I am on the home page",
+              "line": 5,
+              "match": {
+                "location": "tipo_de_historia_dermatologica.py:9"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 3775940418
+              }
+            },
+            {
+              "keyword": "Then ",
+              "name": "the page should load successfully and the \"Nueva Historia Clínica\" button should be present",
+              "line": 6,
+              "match": {
+                "location": "tipo_de_historia_dermatologica.py:16"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 4172734976
+              }
+            }
+          ],
+          "tags": []
+        },
+        {
+          "id": "hacer-clic-en-el-boton-nueva-historia-clinica-y-verificar-redireccion",
+          "keyword": "Scenario",
+          "name": "Hacer clic en el botón \"Nueva Historia Clínica\" y verificar redirección",
+          "description": "",
+          "line": 8,
+          "type": "scenario",
+          "steps": [
+            {
+              "keyword": "Given ",
+              "name": "I am on the home page",
+              "line": 9,
+              "match": {
+                "location": "tipo_de_historia_dermatologica.py:9"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 3858535766
+              }
+            },
+            {
+              "keyword": "When ",
+              "name": "I click the \"Nueva Historia Clínica\" button",
+              "line": 10,
+              "match": {
+                "location": "tipo_de_historia_dermatologica.py:43"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 2076147556
+              }
+            },
+            {
+              "keyword": "Then ",
+              "name": "I should be redirected to the type of clinical history page",
+              "line": 11,
+              "match": {
+                "location": "tipo_de_historia_dermatologica.py:53"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 500750541
+              }
+            }
+          ],
+          "tags": []
+        },
+        {
+          "id": "hacer-clic-en-el-boton-historia-clinica-dermatologica-y-verificar-redireccion",
+          "keyword": "Scenario",
+          "name": "Hacer clic en el botón \"Historia Clínica Dermatológica\" y verificar redirección",
+          "description": "",
+          "line": 13,
+          "type": "scenario",
+          "steps": [
+            {
+              "keyword": "Given ",
+              "name": "I am on the type of clinical history page",
+              "line": 14,
+              "match": {
+                "location": "tipo_de_historia_dermatologica.py:36"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 3710335969
+              }
+            },
+            {
+              "keyword": "When ",
+              "name": "I click the \"Historia Clínica Dermatológica\" button",
+              "line": 15,
+              "match": {
+                "location": "tipo_de_historia_dermatologica.py:58"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 2094213486
+              }
+            },
+            {
+              "keyword": "Then ",
+              "name": "I should be redirected to the dermatologica clinical history page",
+              "line": 16,
+              "match": {
+                "location": "tipo_de_historia_dermatologica.py:68"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 2095157623
+              }
+            }
+          ],
+          "tags": []
+        }
+      ],
+      "tags": []
+    }
+  ]
+  

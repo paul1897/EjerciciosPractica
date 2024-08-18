@@ -1,0 +1,190 @@
+[
+    {
+      "uri": "../buscar_historia_General.feature",
+      "id": "buscar-historia-clinica",
+      "keyword": "Feature",
+      "name": "Buscar Historia Clínica",
+      "description": "",
+      "line": 1,
+      "elements": [
+        {
+          "id": "buscar-historia-clinica-valida",
+          "keyword": "Scenario",
+          "name": "Buscar historia clínica por cédula válida",
+          "description": "",
+          "line": 3,
+          "type": "scenario",
+          "steps": [
+            {
+              "keyword": "Given ",
+              "name": "I am on the clinical records search page",
+              "line": 4,
+              "match": {
+                "location": "steps_buscarHistoriaGeneral copy 2.py:6"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 2000
+              }
+            },
+            {
+              "keyword": "When ",
+              "name": "I enter the ID \"1750800151\"",
+              "line": 5,
+              "match": {
+                "location": "steps_buscarHistoriaGeneral copy 2.py:12"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 3000
+              }
+            },
+            {
+              "keyword": "And ",
+              "name": "I click the search button",
+              "line": 6,
+              "match": {
+                "location": "steps_buscarHistoriaGeneral copy 2.py:18"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 4000
+              }
+            },
+            {
+              "keyword": "Then ",
+              "name": "I should be redirected to the clinical record page",
+              "line": 7,
+              "match": {
+                "location": "steps_buscarHistoriaGeneral copy 2.py:24"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 5000
+              }
+            }
+          ],
+          "status": "passed"
+        },
+        {
+          "id": "buscar-historia-clinica-invalida",
+          "keyword": "Scenario",
+          "name": "Buscar historia clínica por cédula inválida",
+          "description": "",
+          "line": 9,
+          "type": "scenario",
+          "steps": [
+            {
+              "keyword": "Given ",
+              "name": "I am on the clinical records search page",
+              "line": 10,
+              "match": {
+                "location": "steps_buscarHistoriaGeneral copy 2.py:6"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 2000
+              }
+            },
+            {
+              "keyword": "When ",
+              "name": "I enter the ID \"0000000000\"",
+              "line": 11,
+              "match": {
+                "location": "steps_buscarHistoriaGeneral copy 2.py:12"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 3000
+              }
+            },
+            {
+              "keyword": "And ",
+              "name": "I click the search button",
+              "line": 12,
+              "match": {
+                "location": "steps_buscarHistoriaGeneral copy 2.py:18"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 4000
+              }
+            },
+            {
+              "keyword": "Then ",
+              "name": "I should see an error message",
+              "line": 13,
+              "match": {
+                "location": "steps_buscarHistoriaGeneral copy 2.py:24"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 5000
+              }
+            }
+          ],
+          "status": "passed"
+        },
+        {
+          "id": "buscar-historia-clinica-vacia",
+          "keyword": "Scenario",
+          "name": "Buscar historia clínica con cédula vacía",
+          "description": "",
+          "line": 15,
+          "type": "scenario",
+          "steps": [
+            {
+              "keyword": "Given ",
+              "name": "I am on the clinical records search page",
+              "line": 16,
+              "match": {
+                "location": "steps_buscarHistoriaGeneral copy 2.py:6"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 2000
+              }
+            },
+            {
+              "keyword": "When ",
+              "name": "I enter the ID \"\"",
+              "line": 17,
+              "match": {
+                "location": "steps_buscarHistoriaGeneral copy 2.py:12"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 3000
+              }
+            },
+            {
+              "keyword": "And ",
+              "name": "I click the search button",
+              "line": 18,
+              "match": {
+                "location": "steps_buscarHistoriaGeneral copy 2.py:18"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 4000
+              }
+            },
+            {
+              "keyword": "Then ",
+              "name": "I should see an error message indicating the field is required",
+              "line": 19,
+              "match": {
+                "location": "steps_buscarHistoriaGeneral copy 2.py:24"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 5000
+              }
+            }
+          ],
+          "status": "passed"
+        }
+      ]
+    }
+  ]
+  
