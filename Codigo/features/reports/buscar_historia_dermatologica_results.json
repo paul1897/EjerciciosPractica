@@ -1,191 +1,190 @@
 [
-    {
-      "uri": "buscar_historia_Dermatologica.feature",
-      "id": "buscar-historia-clinica-dermatologica",
-      "keyword": "Feature",
-      "name": "Buscar Historia Clínica Dermatológica",
-      "description": "",
-      "line": 1,
-      "elements": [
-        {
-          "id": "buscar-historia-clinica-dermatologica-1",
-          "keyword": "Scenario",
-          "name": "Buscar historia clínica dermatológica por cédula válida",
-          "description": "",
-          "line": 3,
-          "type": "scenario",
-          "steps": [
-            {
-              "keyword": "Given ",
-              "name": "estoy en la página de búsqueda de historias clínicas",
-              "line": 4,
-              "match": {
-                "location": "steps_buscarHistoriaDermatologica.py:58"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 16408
-              }
+  {
+    "uri": "buscar_historia_Dermatologica.feature",
+    "id": "buscar-historia-clinica-dermatologica",
+    "keyword": "Feature",
+    "name": "Buscar Historia Clínica Dermatológica",
+    "description": "",
+    "line": 1,
+    "elements": [
+      {
+        "id": "buscar-historia-clinica-dermatologica-1",
+        "keyword": "Scenario",
+        "name": "Buscar historia clínica dermatológica por cédula válida",
+        "description": "",
+        "line": 3,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "estoy en la página de búsqueda de historias clínicas",
+            "line": 4,
+            "match": {
+              "location": "steps_buscarHistoriaDermatologica.py:58"
             },
-            {
-              "keyword": "When ",
-              "name": "ingreso la cédula \"1750800151\"",
-              "line": 5,
-              "match": {
-                "location": "steps_buscarHistoriaDermatologica.py:62"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 139287
-              }
-            },
-            {
-              "keyword": "And ",
-              "name": "hago clic en el botón de búsqueda",
-              "line": 6,
-              "match": {
-                "location": "steps_buscarHistoriaDermatologica.py:70"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 171951
-              }
-            },
-            {
-              "keyword": "Then ",
-              "name": "debo ser redirigido a la página de la historia clínica",
-              "line": 7,
-              "match": {
-                "location": "steps_buscarHistoriaDermatologica.py:78"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 198570
-              }
+            "result": {
+              "status": "passed",
+              "duration": 16408
             }
-          ],
-          "tags": []
-        },
-        {
-          "id": "buscar-historia-clinica-dermatologica-2",
-          "keyword": "Scenario",
-          "name": "Buscar historia clínica dermatológica por cédula inválida",
-          "description": "",
-          "line": 9,
-          "type": "scenario",
-          "steps": [
-            {
-              "keyword": "Given ",
-              "name": "estoy en la página de búsqueda de historias clínicas",
-              "line": 10,
-              "match": {
-                "location": "steps_buscarHistoriaDermatologica.py:58"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 15724
-              }
+          },
+          {
+            "keyword": "When ",
+            "name": "ingreso la cédula \"1750800151\"",
+            "line": 5,
+            "match": {
+              "location": "steps_buscarHistoriaDermatologica.py:62"
             },
-            {
-              "keyword": "When ",
-              "name": "ingreso la cédula \"0000000000\"",
-              "line": 11,
-              "match": {
-                "location": "steps_buscarHistoriaDermatologica.py:62"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 11558
-              }
-            },
-            {
-              "keyword": "And ",
-              "name": "hago clic en el botón de búsqueda",
-              "line": 12,
-              "match": {
-                "location": "steps_buscarHistoriaDermatologica.py:70"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 14527
-              }
-            },
-            {
-              "keyword": "Then ",
-              "name": "debo ver un mensaje de error",
-              "line": 13,
-              "match": {
-                "location": "steps_buscarHistoriaDermatologica.py:78"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 11808
-              }
+            "result": {
+              "status": "passed",
+              "duration": 139287
             }
-          ],
-          "tags": []
-        },
-        {
-          "id": "buscar-historia-clinica-dermatologica-3",
-          "keyword": "Scenario",
-          "name": "Buscar historia clínica dermatológica con cédula vacía",
-          "description": "",
-          "line": 15,
-          "type": "scenario",
-          "steps": [
-            {
-              "keyword": "Given ",
-              "name": "estoy en la página de búsqueda de historias clínicas",
-              "line": 16,
-              "match": {
-                "location": "steps_buscarHistoriaDermatologica.py:58"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 16070
-              }
+          },
+          {
+            "keyword": "And ",
+            "name": "hago clic en el botón de búsqueda",
+            "line": 6,
+            "match": {
+              "location": "steps_buscarHistoriaDermatologica.py:70"
             },
-            {
-              "keyword": "When ",
-              "name": "ingreso la cédula \"\"",
-              "line": 17,
-              "match": {
-                "location": "steps_buscarHistoriaDermatologica.py:69"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 12936
-              }
-            },
-            {
-              "keyword": "And ",
-              "name": "hago clic en el botón de búsqueda",
-              "line": 18,
-              "match": {
-                "location": "steps_buscarHistoriaDermatologica.py:85"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 23221
-              }
-            },
-            {
-              "keyword": "Then ",
-              "name": "debo ver un mensaje de error indicando que el campo es obligatorio",
-              "line": 19,
-              "match": {
-                "location": "steps_buscarHistoriaDermatologica.py:141"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 11186
-              }
+            "result": {
+              "status": "passed",
+              "duration": 171951
             }
-          ],
-          "tags": []
-        }
-      ],
-      "tags": []
-    }
-  ]
-  
+          },
+          {
+            "keyword": "Then ",
+            "name": "debo ser redirigido a la página de la historia clínica",
+            "line": 7,
+            "match": {
+              "location": "steps_buscarHistoriaDermatologica.py:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 198570
+            }
+          }
+        ],
+        "tags": []
+      },
+      {
+        "id": "buscar-historia-clinica-dermatologica-2",
+        "keyword": "Scenario",
+        "name": "Buscar historia clínica dermatológica por cédula inválida",
+        "description": "",
+        "line": 9,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "estoy en la página de búsqueda de historias clínicas",
+            "line": 10,
+            "match": {
+              "location": "steps_buscarHistoriaDermatologica.py:58"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15724
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "ingreso la cédula \"0000000000\"",
+            "line": 11,
+            "match": {
+              "location": "steps_buscarHistoriaDermatologica.py:62"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11558
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "hago clic en el botón de búsqueda",
+            "line": 12,
+            "match": {
+              "location": "steps_buscarHistoriaDermatologica.py:70"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14527
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "debo ver un mensaje de error",
+            "line": 13,
+            "match": {
+              "location": "steps_buscarHistoriaDermatologica.py:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11808
+            }
+          }
+        ],
+        "tags": []
+      },
+      {
+        "id": "buscar-historia-clinica-dermatologica-3",
+        "keyword": "Scenario",
+        "name": "Buscar historia clínica dermatológica con cédula vacía",
+        "description": "",
+        "line": 15,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "estoy en la página de búsqueda de historias clínicas",
+            "line": 16,
+            "match": {
+              "location": "steps_buscarHistoriaDermatologica.py:58"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16070
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "ingreso la cédula \"\"",
+            "line": 17,
+            "match": {
+              "location": "steps_buscarHistoriaDermatologica.py:69"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12936
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "hago clic en el botón de búsqueda",
+            "line": 18,
+            "match": {
+              "location": "steps_buscarHistoriaDermatologica.py:85"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23221
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "debo ver un mensaje de error indicando que el campo es obligatorio",
+            "line": 19,
+            "match": {
+              "location": "steps_buscarHistoriaDermatologica.py:141"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11186
+            }
+          }
+        ],
+        "tags": []
+      }
+    ],
+    "tags": []
+  }
+]

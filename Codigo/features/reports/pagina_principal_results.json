@@ -17,7 +17,7 @@
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the home page",
+            "name": "Estoy en la página principal",
             "line": 5,
             "match": {
               "location": "pagina_principal.py:8"
@@ -29,7 +29,7 @@
           },
           {
             "keyword": "Then ",
-            "name": "the page should load successfully",
+            "name": "La página debería cargarse correctamente",
             "line": 6,
             "match": {
               "location": "pagina_principal.py:15"

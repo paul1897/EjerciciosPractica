@@ -1,49 +1,48 @@
 [
-    {
-      "uri": "../nueva_historia.feature",
-      "id": "cargar-la-pagina-principal-y-verificar-el-boton-nueva-historia-clinica",
-      "keyword": "Feature",
-      "name": "Nueva historia clinica",
-      "description": "",
-      "line": 3,
-      "elements": [
-        {
-          "id": "cargar-la-pagina-principal-y-verificar-el-boton-nueva-historia-clinica",
-          "keyword": "Scenario",
-          "name": "Cargar la página principal y verificar el botón \"Nueva Historia Clínica\"",
-          "description": "",
-          "line": 5,
-          "type": "scenario",
-          "steps": [
-            {
-              "keyword": "Given ",
-              "name": "I am on the home page",
-              "line": 6,
-              "match": {
-                "location": "nueva_historia.py:9"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 3856644392
-              }
+  {
+    "uri": "../nueva_historia.feature",
+    "id": "cargar-la-pagina-principal-y-verificar-el-boton-nueva-historia-clinica",
+    "keyword": "Feature",
+    "name": "Nueva historia clínica",
+    "description": "",
+    "line": 3,
+    "elements": [
+      {
+        "id": "cargar-la-pagina-principal-y-verificar-el-boton-nueva-historia-clinica",
+        "keyword": "Scenario",
+        "name": "Cargar la página principal y verificar el botón \"Nueva Historia Clínica\"",
+        "description": "",
+        "line": 5,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "Estoy en la página principal",
+            "line": 6,
+            "match": {
+              "location": "nueva_historia.py:9"
             },
-            {
-              "keyword": "Then ",
-              "name": "the page should load successfully and the \"Nueva Historia Clínica\" button should be present",
-              "line": 7,
-              "match": {
-                "location": "nueva_historia.py:16"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 4170141220
-              }
+            "result": {
+              "status": "passed",
+              "duration": 3856644392
             }
-          ],
-          "tags": []
-        }
-      ],
-      "tags": []
-    }
-  ]
-  
+          },
+          {
+            "keyword": "Then ",
+            "name": "La página debería cargarse correctamente y el botón \"Nueva Historia Clínica\" debería estar presente",
+            "line": 7,
+            "match": {
+              "location": "nueva_historia.py:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4170141220
+            }
+          }
+        ],
+        "tags": []
+      }
+    ],
+    "tags": []
+  }
+]

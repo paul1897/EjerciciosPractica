@@ -1,143 +1,142 @@
 [
-    {
-      "uri": "tipo_de_historia_general.feature",
-      "id": "cargar-la-pagina-principal-y-verificar-el-boton-nueva-historia-clinica",
-      "keyword": "Feature",
-      "name": "Nueva historia general",
-      "description": "",
-      "line": 2,
-      "elements": [
-        {
-          "id": "cargar-la-pagina-principal-y-verificar-el-boton-nueva-historia-clinica",
-          "keyword": "Scenario",
-          "name": "Cargar la página principal y verificar el botón \"Nueva Historia Clínica\"",
-          "description": "",
-          "line": 5,
-          "type": "scenario",
-          "steps": [
-            {
-              "keyword": "Given",
-              "name": "I am on the home page",
-              "line": 6,
-              "match": {
-                "location": "steps/tipo_de_historia_general.py:9"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 3930546522140503
-              }
+  {
+    "uri": "tipo_de_historia_general.feature",
+    "id": "cargar-la-pagina-principal-y-verificar-el-boton-nueva-historia-clinica",
+    "keyword": "Feature",
+    "name": "Nueva historia general",
+    "description": "",
+    "line": 2,
+    "elements": [
+      {
+        "id": "cargar-la-pagina-principal-y-verificar-el-boton-nueva-historia-clinica",
+        "keyword": "Scenario",
+        "name": "Cargar la página principal y verificar el botón \"Nueva Historia Clínica\"",
+        "description": "",
+        "line": 5,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "Estoy en la página principal",
+            "line": 6,
+            "match": {
+              "location": "steps/tipo_de_historia_general.py:9"
             },
-            {
-              "keyword": "Then",
-              "name": "the page should load successfully and the \"Nueva Historia Clínica\" button should be present",
-              "line": 7,
-              "match": {
-                "location": "steps/tipo_de_historia_general.py:16"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 4202866077423096
-              }
+            "result": {
+              "status": "passed",
+              "duration": 3930546522140503
             }
-          ],
-          "tags": []
-        },
-        {
-          "id": "hacer-clic-en-el-boton-nueva-historia-clinica-y-verificar-redireccion",
-          "keyword": "Scenario",
-          "name": "Hacer clic en el botón \"Nueva Historia Clínica\" y verificar redirección",
-          "description": "",
-          "line": 9,
-          "type": "scenario",
-          "steps": [
-            {
-              "keyword": "Given",
-              "name": "I am on the home page",
-              "line": 10,
-              "match": {
-                "location": "steps/tipo_de_historia_general.py:9"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 3773395061492920
-              }
+          },
+          {
+            "keyword": "Then ",
+            "name": "La página debería cargarse correctamente y el botón \"Nueva Historia Clínica\" debería estar presente",
+            "line": 7,
+            "match": {
+              "location": "steps/tipo_de_historia_general.py:16"
             },
-            {
-              "keyword": "When",
-              "name": "I click the \"Nueva Historia Clínica\" button",
-              "line": 11,
-              "match": {
-                "location": "steps/tipo_de_historia_general.py:43"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 20704500675201416
-              }
-            },
-            {
-              "keyword": "Then",
-              "name": "I should be redirected to the type of clinical history page",
-              "line": 12,
-              "match": {
-                "location": "steps/tipo_de_historia_general.py:53"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 62274932861328125
-              }
+            "result": {
+              "status": "passed",
+              "duration": 4202866077423096
             }
-          ],
-          "tags": []
-        },
-        {
-          "id": "hacer-clic-en-el-boton-historia-clinica-general-y-verificar-redireccion",
-          "keyword": "Scenario",
-          "name": "Hacer clic en el botón \"Historia Clínica General\" y verificar redirección",
-          "description": "",
-          "line": 14,
-          "type": "scenario",
-          "steps": [
-            {
-              "keyword": "Given",
-              "name": "I am on the type of clinical history page",
-              "line": 15,
-              "match": {
-                "location": "steps/tipo_de_historia_general.py:36"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 38145031929016113
-              }
+          }
+        ],
+        "tags": []
+      },
+      {
+        "id": "hacer-clic-en-el-boton-nueva-historia-clinica-y-verificar-redireccion",
+        "keyword": "Scenario",
+        "name": "Hacer clic en el botón \"Nueva Historia Clínica\" y verificar redirección",
+        "description": "",
+        "line": 9,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "Estoy en la página principal",
+            "line": 10,
+            "match": {
+              "location": "steps/tipo_de_historia_general.py:9"
             },
-            {
-              "keyword": "When",
-              "name": "I click the \"Historia Clínica General\" button",
-              "line": 16,
-              "match": {
-                "location": "steps/tipo_de_historia_general.py:58"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 20788865089416504
-              }
-            },
-            {
-              "keyword": "Then",
-              "name": "I should be redirected to the general clinical history page",
-              "line": 17,
-              "match": {
-                "location": "steps/tipo_de_historia_general.py:68"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 21026782989501953
-              }
+            "result": {
+              "status": "passed",
+              "duration": 3773395061492920
             }
-          ],
-          "tags": []
-        }
-      ],
-      "tags": []
-    }
-  ]
-  
+          },
+          {
+            "keyword": "When ",
+            "name": "Hago clic en el botón \"Nueva Historia Clínica\"",
+            "line": 11,
+            "match": {
+              "location": "steps/tipo_de_historia_general.py:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20704500675201416
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "Debería ser redirigido a la página de tipo de historia clínica",
+            "line": 12,
+            "match": {
+              "location": "steps/tipo_de_historia_general.py:53"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 62274932861328125
+            }
+          }
+        ],
+        "tags": []
+      },
+      {
+        "id": "hacer-clic-en-el-boton-historia-clinica-general-y-verificar-redireccion",
+        "keyword": "Scenario",
+        "name": "Hacer clic en el botón \"Historia Clínica General\" y verificar redirección",
+        "description": "",
+        "line": 14,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "Estoy en la página de tipo de historia clínica",
+            "line": 15,
+            "match": {
+              "location": "steps/tipo_de_historia_general.py:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38145031929016113
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "Hago clic en el botón \"Historia Clínica General\"",
+            "line": 16,
+            "match": {
+              "location": "steps/tipo_de_historia_general.py:58"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20788865089416504
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "Debería ser redirigido a la página de historia clínica general",
+            "line": 17,
+            "match": {
+              "location": "steps/tipo_de_historia_general.py:68"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21026782989501953
+            }
+          }
+        ],
+        "tags": []
+      }
+    ],
+    "tags": []
+  }
+]

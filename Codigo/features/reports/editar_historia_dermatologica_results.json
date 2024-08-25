@@ -1,81 +1,80 @@
 [
-    {
-      "uri": "../editar_historia_dermatologica.feature",
-      "id": "actualizar-el-campo-medico-responsable-d-y-guardar-la-historia",
-      "keyword": "Feature",
-      "name": "Editar Historia Dermatologica",
-      "description": "",
-      "line": 1,
-      "elements": [
-        {
-          "id": "actualizar-el-campo-medico-responsable-d-y-guardar-la-historia",
-          "keyword": "Scenario",
-          "name": "Actualizar el campo \"medico_responsable_d\" y guardar la historia",
-          "description": "",
-          "line": 3,
-          "type": "scenario",
-          "steps": [
-            {
-              "keyword": "Given ",
-              "name": "I am on the edit dermatoscopic history page for a specific history",
-              "line": 4,
-              "match": {
-                "location": "editar_historia_dermatologica.py:10"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 6007885217
-              }
+  {
+    "uri": "../editar_historia_dermatologica.feature",
+    "id": "actualizar-el-campo-medico-responsable-d-y-guardar-la-historia",
+    "keyword": "Feature",
+    "name": "Editar Historia Dermatológica",
+    "description": "",
+    "line": 1,
+    "elements": [
+      {
+        "id": "actualizar-el-campo-medico-responsable-d-y-guardar-la-historia",
+        "keyword": "Scenario",
+        "name": "Actualizar el campo \"medico_responsable_d\" y guardar la historia",
+        "description": "",
+        "line": 3,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "Estoy en la página de edición de la historia dermatológica para una historia específica",
+            "line": 4,
+            "match": {
+              "location": "editar_historia_dermatologica.py:10"
             },
-            {
-              "keyword": "When ",
-              "name": "I update the \"medico_responsable_d\" field with a new value",
-              "line": 5,
-              "match": {
-                "location": "editar_historia_dermatologica.py:17"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 2069873571
-              }
-            },
-            {
-              "keyword": "And ",
-              "name": "I click the \"Actualizar Historia\" button",
-              "line": 6,
-              "match": {
-                "location": "editar_historia_dermatologica.py:29"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 12087641239,
-                "error_message": [
-                  "Assertion Failed: Error al hacer clic en el botón 'Actualizar Historia' o al manejar la alerta: Message: ",
-                  "",
-                  "Captured logging:",
-                  "INFO:WDM:====== WebDriver manager ======",
-                  "INFO:WDM:Get LATEST chromedriver version for google-chrome",
-                  "INFO:WDM:Get LATEST chromedriver version for google-chrome",
-                  "INFO:WDM:Driver [C:\\Users\\User\\.wdm\\drivers\\chromedriver\\win64\\127.0.6533.119\\chromedriver-win32/chromedriver.exe] found in cache"
-                ]
-              }
-            },
-            {
-              "keyword": "Then ",
-              "name": "the changes should be saved and the page should reflect the updated data",
-              "line": 7,
-              "match": {
-                "location": "editar_historia_dermatologica.py:38"
-              },
-              "result": {
-                "status": "skipped"
-              }
+            "result": {
+              "status": "passed",
+              "duration": 6007885217
             }
-          ],
-          "tags": []
-        }
-      ],
-      "tags": []
-    }
-  ]
-  
+          },
+          {
+            "keyword": "When ",
+            "name": "Actualizo el campo \"medico_responsable_d\" con un nuevo valor",
+            "line": 5,
+            "match": {
+              "location": "editar_historia_dermatologica.py:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2069873571
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "Hago clic en el botón \"Actualizar Historia\"",
+            "line": 6,
+            "match": {
+              "location": "editar_historia_dermatologica.py:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12087641239,
+              "error_message": [
+                "Assertion Failed: Error al hacer clic en el botón 'Actualizar Historia' o al manejar la alerta: Message: ",
+                "",
+                "Captured logging:",
+                "INFO:WDM:====== WebDriver manager ======",
+                "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+                "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+                "INFO:WDM:Driver [C:\\Users\\User\\.wdm\\drivers\\chromedriver\\win64\\127.0.6533.119\\chromedriver-win32/chromedriver.exe] found in cache"
+              ]
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "Los cambios deben ser guardados y la página debe reflejar los datos actualizados",
+            "line": 7,
+            "match": {
+              "location": "editar_historia_dermatologica.py:38"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ],
+        "tags": []
+      }
+    ],
+    "tags": []
+  }
+]

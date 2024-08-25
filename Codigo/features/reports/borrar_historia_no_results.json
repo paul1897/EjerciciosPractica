@@ -1,73 +1,72 @@
 [
-    {
-      "uri": "borrar_historia_dermatologica_no.feature",
-      "id": "intentando-borrar-historia-clinica-y-cancelar-la-accion",
-      "keyword": "Feature",
-      "name": "No Borrar Historia Clínica Dermatologica",
-      "description": "",
-      "line": 1,
-      "elements": [
-        {
-          "id": "intentando-borrar-historia-clinica-y-cancelar-la-accion",
-          "keyword": "Scenario",
-          "name": "Intentar borrar una historia clínica y cancelar la acción",
-          "description": "",
-          "line": 3,
-          "type": "scenario",
-          "steps": [
-            {
-              "keyword": "Given",
-              "name": "I am on the report page of a specific dermatoscopic history",
-              "line": 4,
-              "match": {
-                "location": "steps/borrar_historia_dermatologica_no.py:8"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 5897478103637695
-              }
+  {
+    "uri": "borrar_historia_dermatologica_no.feature",
+    "id": "intentando-borrar-historia-clinica-y-cancelar-la-accion",
+    "keyword": "Feature",
+    "name": "No Borrar Historia Clínica Dermatologica",
+    "description": "",
+    "line": 1,
+    "elements": [
+      {
+        "id": "intentando-borrar-historia-clinica-y-cancelar-la-accion",
+        "keyword": "Scenario",
+        "name": "Intentar borrar una historia clínica y cancelar la acción",
+        "description": "",
+        "line": 3,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given",
+            "name": "Estoy en la página de reporte de una historia dermatoscópica específica",
+            "line": 4,
+            "match": {
+              "location": "steps/borrar_historia_dermatologica_no.py:8"
             },
-            {
-              "keyword": "When",
-              "name": "I click the \"Borrar\" button",
-              "line": 5,
-              "match": {
-                "location": "steps/borrar_historia_dermatologica_no.py:14"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 2067757368087768
-              }
-            },
-            {
-              "keyword": "And",
-              "name": "I decline the deletion",
-              "line": 6,
-              "match": {
-                "location": "steps/borrar_historia_dermatologica_no.py:23"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 2052479505538940
-              }
-            },
-            {
-              "keyword": "Then",
-              "name": "the history should not be deleted and the page should reflect the cancellation",
-              "line": 7,
-              "match": {
-                "location": "steps/borrar_historia_dermatologica_no.py:32"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 4184630632400513
-              }
+            "result": {
+              "status": "passed",
+              "duration": 5897478103637695
             }
-          ],
-          "tags": []
-        }
-      ],
-      "tags": []
-    }
-  ]
-  
+          },
+          {
+            "keyword": "When",
+            "name": "Hago clic en el botón \"Borrar\"",
+            "line": 5,
+            "match": {
+              "location": "steps/borrar_historia_dermatologica_no.py:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2067757368087768
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "Declino la eliminación",
+            "line": 6,
+            "match": {
+              "location": "steps/borrar_historia_dermatologica_no.py:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2052479505538940
+            }
+          },
+          {
+            "keyword": "Then",
+            "name": "La historia no debería ser eliminada y la página debería reflejar la cancelación",
+            "line": 7,
+            "match": {
+              "location": "steps/borrar_historia_dermatologica_no.py:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4184630632400513
+            }
+          }
+        ],
+        "tags": []
+      }
+    ],
+    "tags": []
+  }
+]
