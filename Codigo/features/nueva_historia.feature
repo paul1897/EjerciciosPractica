@@ -1,7 +1,5 @@
-# features/pagina_principal.feature
-
-Feature: Nueva historia clinica
+Feature: Nueva historia clínica
 
   Scenario: Cargar la página principal y verificar el botón "Nueva Historia Clínica"
-    Given I am on the home page
-    Then the page should load successfully and the "Nueva Historia Clínica" button should be present
+    Given Estoy en la página principal
+    Then La página debería cargarse correctamente y el botón "Nueva Historia Clínica" debería estar presente

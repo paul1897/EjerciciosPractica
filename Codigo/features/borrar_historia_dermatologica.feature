@@ -1,7 +1,7 @@
-Feature: Borrar Historia Clínica Dermatologica
+Feature: Borrar Historia Clínica Dermatológica
 
   Scenario: Borrar una historia clínica
-    Given I am on the report page of a specific dermatoscopic history
-    When I click the "Borrar" button
-    And I confirm the deletion
-    Then the history should be deleted and the page should reflect the deletion
+    Given Estoy en la página de reporte de una historia dermatoscópica específica
+    When Hago clic en el botón "Borrar"
+    And Confirmo la eliminación
+    Then La historia debería ser eliminada y la página debería reflejar la eliminación
