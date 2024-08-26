@@ -6,14 +6,14 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import time
 
-@given('I am on the home page')
+@given('Estoy en la página principal')
 def step_given_i_am_on_the_home_page(context):
     # Configura el driver de Selenium
     context.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     context.driver.get('http://127.0.0.1:5000')
     time.sleep(2)  # Espera para asegurar que la página se cargue
 
-@then('the page should load successfully and the "Nueva Historia Clínica" button should be present')
+@then('La página debería cargarse correctamente y el botón "Nueva Historia Clínica" debería estar presente')
 def step_then_the_page_should_load_successfully(context):
     # Verifica que la página se ha cargado comprobando la presencia del título
     title = context.driver.title
@@ -33,14 +33,14 @@ def step_then_the_page_should_load_successfully(context):
     # Cierra el navegador
     context.driver.quit()
 
-@given('I am on the type of clinical history page')
+@given('Estoy en la página de tipo de historia clínica')
 def step_given_i_am_on_the_type_of_clinical_history_page(context):
     # Configura el driver de Selenium y navega a la página de tipo de historia clínica
     context.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     context.driver.get('http://127.0.0.1:5000/tipo_historia')
     time.sleep(2)  # Espera para asegurar que la página se cargue
 
-@when('I click the "Nueva Historia Clínica" button')
+@when('Hago clic en el botón "Nueva Historia Clínica"')
 def step_when_i_click_the_nueva_historia_button(context):
     # Haz clic en el botón "Nueva Historia Clínica"
     try:
@@ -50,25 +50,25 @@ def step_when_i_click_the_nueva_historia_button(context):
     except Exception as e:
         assert False, f"Error al hacer clic en el botón 'Nueva Historia Clínica': {str(e)}"
 
-@then('I should be redirected to the type of clinical history page')
+@then('Debería ser redirigido a la página de tipo de historia clínica')
 def step_then_i_should_be_redirected_to_type_of_clinical_history_page(context):
     # Verifica que la URL sea la correcta después de hacer clic en el botón
     assert context.driver.current_url == 'http://127.0.0.1:5000/tipo_historia', "No se ha redirigido a la página de tipo de historia clínica"
 
-@when('I click the "Historia Clínica Dermatológica" button')
+@when('Hago clic en el botón "Historia Clínica Dermatológica"')
 def step_when_i_click_the_historia_clinica_dermatologica_button(context):
-    # Haz clic en el botón "Historia Clínica General"
+    # Haz clic en el botón "Historia Clínica Dermatológica"
     try:
-        general_historia_button = context.driver.find_element(By.LINK_TEXT, 'Historia Clínica Dermatológica')
-        general_historia_button.click()
+        dermatologica_historia_button = context.driver.find_element(By.LINK_TEXT, 'Historia Clínica Dermatológica')
+        dermatologica_historia_button.click()
         time.sleep(2)  # Espera para que la acción se complete
     except Exception as e:
         assert False, f"Error al hacer clic en el botón 'Historia Clínica Dermatológica': {str(e)}"
 
-@then('I should be redirected to the dermatologica clinical history page')
+@then('Debería ser redirigido a la página de historia clínica dermatológica')
 def step_then_i_should_be_redirected_to_dermatologica_clinical_history_page(context):
     # Verifica que la URL sea la correcta después de hacer clic en el botón
-    assert context.driver.current_url == 'http://127.0.0.1:5000/nueva_historia_d', "No se ha redirigido a la página de historia clínica general"
+    assert context.driver.current_url == 'http://127.0.0.1:5000/nueva_historia_d', "No se ha redirigido a la página de historia clínica dermatológica"
 
     # Cierra el navegador
     context.driver.quit()

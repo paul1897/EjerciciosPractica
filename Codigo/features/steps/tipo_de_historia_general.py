@@ -6,15 +6,15 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import time
 
-@given('I am on the home page')
-def step_given_i_am_on_the_home_page(context):
+@given('Estoy en la página principal')
+def step_given_estoy_en_la_pagina_principal(context):
     # Configura el driver de Selenium
     context.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     context.driver.get('http://127.0.0.1:5000')
     time.sleep(2)  # Espera para asegurar que la página se cargue
 
-@then('the page should load successfully and the "Nueva Historia Clínica" button should be present')
-def step_then_the_page_should_load_successfully(context):
+@then('La página debería cargarse correctamente y el botón "Nueva Historia Clínica" debería estar presente')
+def step_then_la_pagina_deberia_cargarse_correctamente(context):
     # Verifica que la página se ha cargado comprobando la presencia del título
     title = context.driver.title
     assert title == "Bienvenido a Ani-Medical", "La página no se ha cargado correctamente"
@@ -33,15 +33,15 @@ def step_then_the_page_should_load_successfully(context):
     # Cierra el navegador
     context.driver.quit()
 
-@given('I am on the type of clinical history page')
-def step_given_i_am_on_the_type_of_clinical_history_page(context):
+@given('Estoy en la página de tipo de historia clínica')
+def step_given_estoy_en_la_pagina_de_tipo_de_historia_clinica(context):
     # Configura el driver de Selenium y navega a la página de tipo de historia clínica
     context.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     context.driver.get('http://127.0.0.1:5000/tipo_historia')
     time.sleep(2)  # Espera para asegurar que la página se cargue
 
-@when('I click the "Nueva Historia Clínica" button')
-def step_when_i_click_the_nueva_historia_button(context):
+@when('Hago clic en el botón "Nueva Historia Clínica"')
+def step_when_hago_clic_en_el_boton_nueva_historia_clinica(context):
     # Haz clic en el botón "Nueva Historia Clínica"
     try:
         nueva_historia_button = context.driver.find_element(By.LINK_TEXT, 'Nueva Historia Clínica')
@@ -50,13 +50,13 @@ def step_when_i_click_the_nueva_historia_button(context):
     except Exception as e:
         assert False, f"Error al hacer clic en el botón 'Nueva Historia Clínica': {str(e)}"
 
-@then('I should be redirected to the type of clinical history page')
-def step_then_i_should_be_redirected_to_type_of_clinical_history_page(context):
+@then('Debería ser redirigido a la página de tipo de historia clínica')
+def step_then_deberia_ser_redirigido_a_la_pagina_de_tipo_de_historia_clinica(context):
     # Verifica que la URL sea la correcta después de hacer clic en el botón
     assert context.driver.current_url == 'http://127.0.0.1:5000/tipo_historia', "No se ha redirigido a la página de tipo de historia clínica"
 
-@when('I click the "Historia Clínica General" button')
-def step_when_i_click_the_historia_clinica_general_button(context):
+@when('Hago clic en el botón "Historia Clínica General"')
+def step_when_hago_clic_en_el_boton_historia_clinica_general(context):
     # Haz clic en el botón "Historia Clínica General"
     try:
         general_historia_button = context.driver.find_element(By.LINK_TEXT, 'Historia Clínica General')
@@ -65,8 +65,8 @@ def step_when_i_click_the_historia_clinica_general_button(context):
     except Exception as e:
         assert False, f"Error al hacer clic en el botón 'Historia Clínica General': {str(e)}"
 
-@then('I should be redirected to the general clinical history page')
-def step_then_i_should_be_redirected_to_general_clinical_history_page(context):
+@then('Debería ser redirigido a la página de historia clínica general')
+def step_then_deberia_ser_redirigido_a_la_pagina_de_historia_clinica_general(context):
     # Verifica que la URL sea la correcta después de hacer clic en el botón
     assert context.driver.current_url == 'http://127.0.0.1:5000/nueva_historia', "No se ha redirigido a la página de historia clínica general"
 
