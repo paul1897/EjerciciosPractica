@@ -1,26 +1,26 @@
 [
   {
-    "uri": "../nueva_historia.feature",
+    "uri": "../nueva_historia_clinica.feature",
     "id": "cargar-la-pagina-principal-y-verificar-el-boton-nueva-historia-clinica",
     "keyword": "Feature",
     "name": "Nueva historia clínica",
     "description": "",
-    "line": 3,
+    "line": 1,
     "elements": [
       {
         "id": "cargar-la-pagina-principal-y-verificar-el-boton-nueva-historia-clinica",
         "keyword": "Scenario",
         "name": "Cargar la página principal y verificar el botón \"Nueva Historia Clínica\"",
         "description": "",
-        "line": 5,
+        "line": 3,
         "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
             "name": "Estoy en la página principal",
-            "line": 6,
+            "line": 4,
             "match": {
-              "location": "nueva_historia.py:9"
+              "location": "nueva_historia_clinica.py:9"
             },
             "result": {
               "status": "passed",
@@ -30,9 +30,9 @@
           {
             "keyword": "Then ",
             "name": "La página debería cargarse correctamente y el botón \"Nueva Historia Clínica\" debería estar presente",
-            "line": 7,
+            "line": 5,
             "match": {
-              "location": "nueva_historia.py:16"
+              "location": "nueva_historia_clinica.py:16"
             },
             "result": {
               "status": "passed",
