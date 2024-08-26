@@ -1,16 +1,15 @@
-# features/pagina_principal.feature
-Feature: Nueva historia dermatologica
+Feature: Nueva Historia Dermatológica
 
   Scenario: Cargar la página principal y verificar el botón "Nueva Historia Clínica"
-    Given I am on the home page
-    Then the page should load successfully and the "Nueva Historia Clínica" button should be present
+    Given Estoy en la página principal
+    Then La página debería cargarse correctamente y el botón "Nueva Historia Clínica" debería estar presente
 
   Scenario: Hacer clic en el botón "Nueva Historia Clínica" y verificar redirección
-    Given I am on the home page
-    When I click the "Nueva Historia Clínica" button
-    Then I should be redirected to the type of clinical history page
+    Given Estoy en la página principal
+    When Hago clic en el botón "Nueva Historia Clínica"
+    Then Debería ser redirigido a la página de tipo de historia clínica
 
   Scenario: Hacer clic en el botón "Historia Clínica Dermatológica" y verificar redirección
-    Given I am on the type of clinical history page
-    When I click the "Historia Clínica Dermatológica" button
-    Then I should be redirected to the dermatologica clinical history page
+    Given Estoy en la página de tipo de historia clínica
+    When Hago clic en el botón "Historia Clínica Dermatológica"
+    Then Debería ser redirigido a la página de historia clínica dermatológica
